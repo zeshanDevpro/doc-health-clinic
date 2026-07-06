@@ -1,23 +1,21 @@
-import type { Metadata } from "next";
-import { company } from "@/constants";
+import { InnerPageHero } from "@/components/global/InnerPageHero";
 import { createPageMetadata } from "@/lib/site-metadata";
-import { ContactHeroSection } from "@/view/contact/ContactHeroSection";
-import { ContactMapSection } from "@/view/contact/ContactMapSection";
-import { ContactSection } from "@/view/contact/ContactSection";
+import { ContactAppointmentSection } from "@/view/home/ContactAppointmentSection";
+import { FaqSection } from "@/view/home/FaqSection";
 
-export const metadata: Metadata = createPageMetadata({
-  title: `Contact Us | ${company.shortName}`,
+export const metadata = createPageMetadata({
+  title: "Contact & Book Appointment | MedCare Health Clinic Islamabad",
   description:
-    "Contact Demo Real Estate for property inquiries — buy, rent, invest, or sell. Our experts respond within one business day.",
+    "Contact MedCare Health Clinic in G-8 Markaz, Islamabad. WhatsApp +92 300 847 3200, email info@medcareclinic.pk, or book your appointment online.",
   path: "/contact",
 });
 
 export default function ContactPage() {
   return (
     <>
-      <ContactHeroSection />
-      <ContactSection />
-      <ContactMapSection />
+      <InnerPageHero page="contact" />
+      <ContactAppointmentSection showHeading={false} />
+      <FaqSection />
     </>
   );
 }

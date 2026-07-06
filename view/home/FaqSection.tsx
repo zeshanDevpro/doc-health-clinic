@@ -9,6 +9,7 @@ type FaqSectionProps = {
   items?: FaqItem[];
   title?: ReactNode;
   subtitle?: string;
+  showHeading?: boolean;
 };
 
 export function FaqSection({
@@ -19,16 +20,17 @@ export function FaqSection({
       <span className="font-semibold text-parkonic-secondary">Questions</span>
     </>
   ),
-  subtitle = "Your questions, answered — everything you need to know about our real estate services.",
+  subtitle = "Everything you need to know about appointments, PKR fees, insurance panels, and visiting our G-8 Islamabad clinic.",
+  showHeading = true,
 }: FaqSectionProps) {
   return (
-    <section className="w-full px-2 pt-[50px] md:px-6 md:pt-[150px] lg:px-10">
+    <section className="w-full px-2 py-20 md:px-6 md:py-28 lg:px-10">
       <Container className="mx-auto max-w-4xl">
         <Reveal>
           <FaqAccordion
             items={items}
-            title={title}
-            subtitle={subtitle}
+            title={showHeading ? title : undefined}
+            subtitle={showHeading ? subtitle : undefined}
           />
         </Reveal>
       </Container>

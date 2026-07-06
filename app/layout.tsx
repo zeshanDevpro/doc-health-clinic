@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "@/components/global/Header";
 import { Footer } from "@/components/global/Footer";
-import { defaultSiteMetadata } from "@/lib/site-metadata";
+import { defaultSiteMetadata, medicalClinicSchema } from "@/lib/site-metadata";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -20,6 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(medicalClinicSchema),
+          }}
+        />
+      </head>
       <body className="min-h-full antialiased">
         <Header />
         <main>{children}</main>

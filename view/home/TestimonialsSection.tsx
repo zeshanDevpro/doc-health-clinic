@@ -3,19 +3,33 @@ import { Reveal } from "@/components/ui/Reveal";
 import { TestimonialsCarousel } from "@/components/ui/TestimonialsCarousel";
 import { testimonials } from "@/constants";
 
-export function TestimonialsSection() {
+type TestimonialsSectionProps = {
+  showHeading?: boolean;
+};
+
+export function TestimonialsSection({ showHeading = true }: TestimonialsSectionProps) {
   return (
-    <section className="w-full overflow-x-hidden px-2 pt-[50px] md:px-6 md:pt-[150px] lg:px-10">
+    <section
+      id="testimonials"
+      className="w-full scroll-mt-24 overflow-x-hidden px-2 py-20 md:px-6 md:py-28 lg:px-10"
+    >
       <Container>
         <Reveal className="min-w-0">
           <TestimonialsCarousel
             testimonials={testimonials}
             title={
-              <>
-                What Our <span className="font-semibold text-parkonic-secondary">Clients Say</span>
-              </>
+              showHeading ? (
+                <>
+                  What Our{" "}
+                  <span className="font-semibold text-parkonic-secondary">Patients Say</span>
+                </>
+              ) : undefined
             }
-            subtitle="Trusted by homebuyers, investors, and property owners across the United States."
+            subtitle={
+              showHeading
+                ? "Trusted by families across Islamabad, Rawalpindi, and the capital region."
+                : undefined
+            }
           />
         </Reveal>
       </Container>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <rect width="200" height="80" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <rect x="16" y="18" width="44" height="44" rx="6" fill="#1B365D"/>
+  <text x="38" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#C5A028">R</text>
+  <text x="72" y="36" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#1B365D">REALTOR</text>
+  <text x="72" y="54" font-family="Arial,sans-serif" font-size="9" fill="#64748B">NATIONAL ASSOCIATION</text>
+</svg>

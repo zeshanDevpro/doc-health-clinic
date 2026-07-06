@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <rect width="200" height="80" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <ellipse cx="36" cy="44" rx="20" ry="14" fill="#2C5282" opacity="0.2"/>
+  <path d="M20 48 Q36 30 52 48" stroke="#2C5282" stroke-width="2" fill="none"/>
+  <text x="68" y="36" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#1B365D">LAKEVIEW</text>
+  <text x="68" y="52" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#C5A028">COMMONS</text>
+</svg>

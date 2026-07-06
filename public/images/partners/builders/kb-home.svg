@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <rect width="200" height="80" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <rect x="16" y="24" width="36" height="32" rx="4" fill="#E31837"/>
+  <text x="34" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">KB</text>
+  <text x="62" y="48" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#333">Home</text>
+</svg>

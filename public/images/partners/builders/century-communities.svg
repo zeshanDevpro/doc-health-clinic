@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <rect width="200" height="80" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <text x="20" y="36" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#1B365D">CENTURY</text>
+  <text x="20" y="52" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#C5A028">COMMUNITIES</text>
+  <circle cx="155" cy="40" r="16" fill="#1B365D"/>
+  <text x="155" y="45" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#C5A028">C</text>
+</svg>

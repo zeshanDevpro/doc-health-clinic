@@ -1,0 +1,36 @@
+{
+  "name": "demo-realestate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "generate:favicon": "node scripts/generate-favicon.mjs",
+    "generate:og": "node scripts/generate-og-image.mjs"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@gsap/react": "^2.1.2",
+    "framer-motion": "^12.41.0",
+    "gsap": "^3.15.0",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-icons": "^5.6.0",
+    "swiper": "^12.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "sharp": "^0.35.2",
+    "tailwindcss": "^4",
+    "to-ico": "^1.1.5",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <rect width="200" height="80" rx="8" fill="#fff" stroke="#E2E8F0"/>
+  <text x="24" y="38" font-family="Georgia,serif" font-size="16" font-weight="700" fill="#003366">D.R.</text>
+  <text x="24" y="56" font-family="Georgia,serif" font-size="16" font-weight="700" fill="#003366">HORTON</text>
+  <rect x="120" y="24" width="56" height="32" rx="4" fill="#003366"/>
+  <text x="148" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#fff">America's</text>
+</svg>

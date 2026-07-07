@@ -119,17 +119,6 @@ export function PersonalDetails({
             />
           </div>
           <div>
-            <label htmlFor="date_of_birth" className="mb-2 block text-sm font-medium text-brand-navy">
-              Date of Birth
-            </label>
-            <input
-              id="date_of_birth"
-              name="date_of_birth"
-              type="date"
-              className={inputClassName}
-            />
-          </div>
-          <div>
             <label htmlFor="city" className="mb-2 block text-sm font-medium text-brand-navy">
               City / Area <span className="text-red-500">*</span>
             </label>

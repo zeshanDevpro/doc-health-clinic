@@ -36,7 +36,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src={images.heroHome}
-          alt="MedCare Health Clinic — quality healthcare in Islamabad, Pakistan"
+          alt="MedCare Health Clinic  quality healthcare in Islamabad, Pakistan"
           fill
           priority
           className="object-cover object-center"
@@ -71,7 +71,7 @@ export function HeroSection() {
 
             <Reveal delay={160}>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-white/85 md:text-lg">
-                Islamabad&apos;s trusted medical centre in G-8 — compassionate care
+                Islamabad&apos;s trusted medical centre in G-8  compassionate care
                 from FCPS-qualified doctors, modern diagnostics, and affordable
                 fees for every Pakistani family.
               </p>
@@ -168,7 +168,7 @@ export function HeroSection() {
         </div>
       </Container>
 
-      {/* Stats strip — full width below hero */}
+      {/* Stats strip  full width below hero */}
       <div className="relative z-[2] px-2 py-10 md:px-6 lg:px-10 border-t border-white/10 bg-white/95 backdrop-blur-md">
         <Container className="py-7 md:py-8">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">

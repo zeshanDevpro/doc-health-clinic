@@ -2,7 +2,7 @@ import { images } from "@/lib/images";
 import type { ImageAnimationItem } from "@/types";
 
 /**
- * Each slide uses a distinct image — titles and descriptions match what is shown.
+ * Each slide uses a distinct image  titles and descriptions match what is shown.
  * Image reference:
  * - aboutClinic: modern medical facility interior
  * - doctorConsultation: specialist physician with stethoscope
@@ -20,7 +20,7 @@ const clinicShowcaseItems: ImageAnimationItem[] = [
     title: "OUR",
     title2: "CLINIC",
     description:
-      "A modern, fully equipped medical centre in the heart of G-8 — designed for comfort, hygiene, and world-class outpatient care.",
+      "A modern, fully equipped medical centre in the heart of G-8  designed for comfort, hygiene, and world-class outpatient care.",
   },
   {
     image: images.doctorConsultation,

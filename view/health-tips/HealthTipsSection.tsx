@@ -81,8 +81,9 @@ export function HealthTipsSection({
               Health <span>Tips</span>
             </SectionHeading>
             <p className="mt-4 text-brand-grey">
-              Practical health guidance for Pakistani families  from our
-              medical team, no appointment needed.
+              Short guides from our G-8 team on blood pressure, diabetes, child
+              vaccines, smog season, and everyday care  written for life in
+              Islamabad, not generic wellness blogs.
             </p>
           </Reveal>
         )}

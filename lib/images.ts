@@ -12,7 +12,7 @@ export const images = {
   heroDoctors: unsplash("1612349317150-e413f6a5b16d", 1920),
   heroWhyChooseUs: unsplash("1584515933487-779824d29309", 1920),
   heroTestimonials: unsplash("1576091160550-2173dba999ef", 1920),
-  heroHealthTips: unsplash("1559757148-5c350d0d3c56", 1920),
+  heroHealthTips: unsplash("1506126613408-eca07ce68773", 1920),
   heroContact: unsplash("1576091160550-2173dba999ef", 1920),
 
   doctorConsultation: unsplash("1612349317150-e413f6a5b16d", 1200),
@@ -37,7 +37,16 @@ export const images = {
   diabetes: unsplash("1558618666-fcd25c85cd64", 800),
   vaccination: unsplash("1584515933487-779824d29309", 800),
   healthyEating: unsplash("1558618666-fcd25c85cd64", 800),
-  dentalHygiene: unsplash("1576091160550-2173dba999ef", 800),
+  smogSeason: unsplash("1449824913935-59a10b8d2000", 800),
+  dentalHygiene: unsplash("1609840114035-3c981b782dfe", 800),
+
+  /** Health tips page  one image per article */
+  healthTipBloodPressure: unsplash("1623658045230-605cb00c80d6", 800),
+  healthTipCheckup: unsplash("1612349317150-e413f6a5b16d", 800),
+  healthTipDiabetes: unsplash("1498837167922-ddd27525d352", 800),
+  healthTipVaccination: unsplash("1594824476967-48c8b964273f", 800),
+  healthTipSmog: unsplash("1516738901171-8eb4fc13bd20", 800),
+  healthTipDental: unsplash("1609840114035-3c981b782dfe", 800),
 
   doctor1: unsplash("1573496359142-b8d87734a5a2", 600),
   doctor2: unsplash("1612349317150-e413f6a5b16d", 600),

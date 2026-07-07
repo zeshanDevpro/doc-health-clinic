@@ -6,7 +6,7 @@ import { HealthTipsSection } from "@/view/health-tips/HealthTipsSection";
 export const metadata = createPageMetadata({
   title: "Health Tips | MedCare Health Clinic Islamabad",
   description:
-    "Expert health and wellness advice for Pakistani families  heart health, diabetes, child vaccination, dental hygiene, and more from MedCare doctors.",
+    "Practical health advice for Islamabad  blood pressure, diabetes, child vaccines, smog season, dental care, and annual check-ups from MedCare doctors in G-8 Markaz.",
   path: "/health-tips",
 });
 

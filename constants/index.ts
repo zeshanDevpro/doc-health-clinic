@@ -27,7 +27,7 @@ export const BRAND_COLORS = {
 
 export const HERO_TEXT_GRADIENT = `linear-gradient(122deg, ${BRAND_COLORS.accent} 0%, ${BRAND_COLORS.primary} 48%, ${BRAND_COLORS.secondary} 100%)`;
 
-/** Bright stops only — readable on dark hero / page backgrounds */
+/** Bright stops only  readable on dark hero / page backgrounds */
 export const HERO_TEXT_GRADIENT_ON_DARK =
   "linear-gradient(120deg, #F0FDFA 0%, #5EEAD4 38%, #2DD4BF 72%, #99F6E4 100%)";
 
@@ -421,58 +421,58 @@ export const testimonials: Testimonial[] = [
 
 export const healthTips: HealthTip[] = [
   {
-    id: "heart-health",
-    title: "Healthy Heart Tips",
+    id: "blood-pressure",
+    title: "Blood Pressure: Watch the Namak",
     excerpt:
-      "Simple daily habits that protect your cardiovascular system and reduce your risk of heart disease.",
+      "High BP is common in Pakistani adults. Small changes to salt, chai, and routine checks can prevent serious problems later.",
     content:
-      "Your heart works tirelessly every day  give it the care it deserves. Aim for at least 150 minutes of moderate aerobic activity per week, such as brisk walking or swimming. Reduce sodium intake by cooking at home and reading food labels carefully. Manage stress through mindfulness, adequate sleep, and meaningful social connections. If you smoke, quitting is the single most impactful change you can make. Schedule an annual cardiovascular screening with your physician, especially if you have a family history of heart disease. Small, consistent changes compound into a dramatically healthier heart over time.",
-    image: images.heartHealth,
+      "At MedCare we see patients every week whose blood pressure has crept up without any obvious symptoms  until headaches, dizziness, or a routine reading flags it. Extra salt in daal, achaar, restaurant food, and even multiple cups of strong chai can add up quickly. Try tasting food before reaching for the namak dani, choose home-cooked meals when you can, and walk for 20–30 minutes most days  even a stroll in the park after Maghrib helps. If you are over 40, have diabetes in the family, or already take BP medicine, get your pressure checked at least every few months. Our nurses can record it in under five minutes at reception; no appointment needed for a quick reading. If your home monitor shows readings above 140/90 on several days, book a consultation  early treatment protects your heart, kidneys, and eyes.",
+    image: images.healthTipBloodPressure,
   },
   {
     id: "annual-checkups",
-    title: "Importance of Annual Checkups",
+    title: "What Your Annual Check-Up Covers",
     excerpt:
-      "Why a yearly wellness visit is the smartest investment you can make in your long-term health.",
+      "A yearly visit is not just for when you feel unwell. Here is what our doctors actually look at during a routine exam.",
     content:
-      "Annual checkups are not just for when you feel unwell  they are your frontline defense against preventable disease. During a wellness visit, your doctor screens for high blood pressure, diabetes, cholesterol imbalances, and early signs of cancer. Many serious conditions show no symptoms in their early stages, making routine blood work and physical exams essential. Your physician can also update vaccinations, review medications, and discuss lifestyle changes tailored to your age and risk factors. Patients who maintain regular checkups live longer and catch problems when they are most treatable.",
-    image: images.checkup,
+      "Many patients tell us they only visit when something hurts. A proper annual check-up is different: it is a chance to catch issues while they are still easy to treat. At MedCare, a typical wellness visit includes blood pressure and weight, a listen to your heart and lungs, basic blood tests (CBC, sugar, cholesterol, and kidney function where needed), and a conversation about sleep, stress, and family history. Women may be advised on anaemia screening; men over 45 often benefit from prostate discussion; anyone with a family history of diabetes or heart disease should not skip yearly labs. Bring your current medicines  including herbal or home remedies  and any reports from other hospitals. General consultation starts from PKR 2,500; we explain lab costs upfront before anything is sent to our on-site laboratory. Most results are ready within 24 hours.",
+    image: images.healthTipCheckup,
   },
   {
     id: "diabetes",
-    title: "Managing Diabetes",
+    title: "Diabetes: Eating Well with Desi Food",
     excerpt:
-      "Practical strategies for keeping blood sugar stable and living well with diabetes.",
+      "You do not have to give up roti and daal. Portion size, timing, and regular sugar checks matter more than cutting everything out.",
     content:
-      "Living with diabetes requires a proactive partnership between you and your healthcare team. Monitor your blood glucose levels as directed and keep a log to identify patterns. Focus on a balanced diet rich in whole grains, lean proteins, and non-starchy vegetables while limiting refined sugars. Regular physical activity improves insulin sensitivity  even a 30-minute daily walk makes a measurable difference. Take medications exactly as prescribed and never skip doses without consulting your doctor. Attend quarterly HbA1c tests to track your long-term control, and schedule annual eye and foot exams to prevent complications.",
-    image: images.diabetes,
+      "Type 2 diabetes is rising fast in Islamabad, often linked to weight gain, sugary chai, fizzy drinks, and long hours sitting at a desk. The good news: most patients can stay well without extreme diets. Choose whole wheat roti over double naan portions, fill half the plate with sabzi, and keep rice to one modest serving. Avoid skipping breakfast and then overeating at dinner  steady meal times help blood sugar stay stable. If you drink chai, reduce sugar gradually or switch to doodh patti with less shakar. Walk after meals when possible; even 15 minutes makes a difference. Check your fasting sugar or HbA1c as your doctor advises  we run both at our lab and can book follow-ups with our general physician or medicine specialist. Never stop tablets or insulin on your own; if readings are often high or you feel very thirsty, weak, or confused, come in the same day.",
+    image: images.healthTipDiabetes,
   },
   {
     id: "vaccination",
-    title: "Child Vaccination Guide",
+    title: "Child Vaccines: EPI Schedule Made Simple",
     excerpt:
-      "A parent's guide to essential childhood vaccinations and why they matter for community health.",
+      "Polio drops, BCG, measles, and hepatitis B  here is how to stay on track and what to bring to each visit.",
     content:
-      "Vaccinations protect Pakistani children from polio, measles, hepatitis B, and other serious diseases. Follow the EPI (Expanded Programme on Immunization) schedule recommended by the Government of Pakistan  available free at government centres and at MedCare for private scheduling. Keep your child's immunisation card updated and bring it to every paediatric visit. Mild fever or soreness after injection is normal. If a dose is missed, catch-up vaccination is available  speak with our paediatrician. Vaccinating your child also protects vulnerable members of your community.",
-    image: images.vaccination,
+      "Parents often arrive at our paediatric desk unsure which injection is due next. Pakistan's EPI (Expanded Programme on Immunization) schedule is free at government centres; at MedCare we offer the same vaccines on a convenient private timetable with appointment reminders. Birth: BCG and OPV. At 6, 10, and 14 weeks: pentavalent, pneumococcal, and polio doses. At 9 months: measles. Boosters follow at 15–18 months and before school entry. Always bring your child's green immunisation card  our staff will stamp it after each dose. Mild fever or a sore leg for a day is normal; give paracetamol as directed on the pack and avoid bathing the injection site for a few hours. If a dose was missed because of travel or illness, do not restart the whole course; our paediatrician will plan catch-up doses. Vaccines protect your child and help keep polio and measles out of our community.",
+    image: images.healthTipVaccination,
   },
   {
-    id: "healthy-eating",
-    title: "Healthy Eating Habits",
+    id: "smog-season",
+    title: "Smog Season in Islamabad: Protect Your Lungs",
     excerpt:
-      "Build a sustainable, nutritious diet that fuels your body without restrictive fad diets.",
+      "From late autumn through winter, air quality drops across the capital. Asthma, cough, and chest tightness spike  here is how to cope.",
     content:
-      "Nutrition is the foundation of good health. Fill half your plate with colorful fruits and vegetables at every meal. Choose whole grains over refined carbohydrates for sustained energy and better digestion. Include lean protein sources such as fish, poultry, legumes, and nuts. Stay hydrated by drinking water throughout the day  aim for eight glasses as a general guideline. Limit processed foods, sugary beverages, and excessive saturated fats. Plan meals ahead to avoid impulsive unhealthy choices. Remember, healthy eating is a lifestyle, not a temporary diet  consistency matters far more than perfection.",
-    image: images.healthyEating,
+      "Every year between October and January, Islamabad's smog pushes more patients to our emergency desk with cough, wheezing, burning eyes, and chest discomfort  especially children and older adults. On high AQI days, limit outdoor exercise, keep windows closed during peak traffic hours, and wear a proper N95 mask if you must be outside for long. Asthma patients should carry their inhaler and follow their action plan; do not wait until breathing becomes difficult at night. Use a humidifier if indoor air feels dry, but clean it regularly to avoid mould. If a cough lasts more than two weeks, you bring up blood, or a child has fast breathing or blue lips, come to the clinic or call 1122 for ambulance help. Our G-8 location is easy to reach from F-6, F-7, and I-8  walk-ins are seen for urgent respiratory symptoms during working hours.",
+    image: images.healthTipSmog,
   },
   {
     id: "dental-hygiene",
-    title: "Dental Hygiene Tips",
+    title: "Teeth, Gums, and Habits We See Every Day",
     excerpt:
-      "Daily oral care practices that prevent cavities, gum disease, and costly dental procedures.",
+      "Chai stains, sweet paan, and skipped flossing lead to cavities and gum bleeding. Daily care and a six-month scale-and-polish go a long way.",
     content:
-      "Good oral hygiene protects more than just your smile  it is linked to heart health, diabetes management, and overall well-being. Brush twice daily with fluoride toothpaste for at least two minutes, reaching all surfaces of every tooth. Floss daily to remove plaque between teeth where brushes cannot reach. Replace your toothbrush every three months or sooner if bristles are frayed. Limit acidic and sugary foods that erode enamel and feed harmful bacteria. Schedule professional cleanings and exams every six months to catch issues early. If you experience bleeding gums, persistent bad breath, or tooth sensitivity, see your dentist promptly.",
-    image: images.dentalHygiene,
+      "Our dental team treats a lot of preventable problems: sensitivity from aggressive brushing, bleeding gums from built-up plaque, and decay worsened by constant chai, mithai, and supari. Brush twice daily with a soft brush and fluoride paste  two full minutes, not a quick scrub. Floss or use an interdental brush at night; food stuck between molars is a common cause of bad breath and cavities. Rinse your mouth with water after chai or cold drinks if you cannot brush right away. Children should have their first dental check by age three, or earlier if you notice brown spots on teeth. Adults should book a professional cleaning every six months; it removes tartar that home brushing cannot. We offer basic fillings, extractions, and hygiene visits at transparent PKR rates. Sudden swelling, severe pain, or a knocked-out tooth needs same-day attention  WhatsApp our front desk and we will fit you in.",
+    image: images.healthTipDental,
   },
 ];
 

@@ -37,7 +37,7 @@ export const pageHeroContent = {
     headingLine1: "Health Tips &",
     headingLine2: "Wellness Advice",
     description:
-      "Practical health guidance from our medical team  written for Pakistani families, climates, and lifestyles.",
+      "Practical health advice for Islamabad families  blood pressure, diabetes, child vaccines, smog season, dental care, and what to expect at your annual check-up at MedCare G-8.",
     backgroundImage: images.heroHealthTips,
     badge: "Expert Advice",
   },

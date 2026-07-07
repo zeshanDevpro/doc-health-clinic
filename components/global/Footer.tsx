@@ -119,7 +119,7 @@ export function Footer() {
             Stay Connected
           </h5>
 
-          <div className="mb-5 rounded-xl bg-white/10 p-4">
+          <div className="mb-5 rounded-xl bg-white/10 p-2 md:p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-red-300">
               Emergency
             </p>
@@ -137,7 +137,7 @@ export function Footer() {
               <p className="mb-3 text-sm text-white/70">
                 Get health tips and clinic updates in your inbox.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col md:flex-row gap-2">
                 <input
                   type="email"
                   value={email}

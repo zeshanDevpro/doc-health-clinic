@@ -118,7 +118,6 @@ export const socialLinks = [
   { label: "LinkedIn", href: "#", icon: "linkedin" },
   { label: "Facebook", href: "#", icon: "facebook" },
   { label: "Instagram", href: "#", icon: "instagram" },
-  { label: "Twitter", href: "#", icon: "twitter" },
 ] as const;
 
 export const heroStats: HeroStat[] = [

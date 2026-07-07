@@ -17,6 +17,7 @@ export type PageHeroProps = {
   headingLine2?: string;
   description: string;
   backgroundImage?: string;
+  backgroundAlt?: string;
   waveImage?: string;
   bannerImage?: string;
   bannerAlt?: string;
@@ -27,7 +28,6 @@ export type PageHeroProps = {
   showGlobeOverlay?: boolean;
   floatingImage?: string;
   theme?: PageHeroTheme;
-  /** `split` = text + optional side banner. `background` = full-bleed bg image only. */
   variant?: "split" | "background";
 };
 
@@ -52,6 +52,47 @@ export type Testimonial = {
   role: string;
   company?: string;
   image?: string;
+  rating?: number;
+};
+
+export type MedicalService = {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type Doctor = {
+  id: string;
+  name: string;
+  specialization: string;
+  qualification: string;
+  experience: number;
+  bio: string;
+  image: string;
+};
+
+export type WhyChooseFeature = {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type HealthTip = {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+};
+
+export type HeroStat = {
+  value: number;
+  suffix: string;
+  label: string;
+  isText?: boolean;
+  textValue?: string;
 };
 
 export type ImageAnimationItem = {

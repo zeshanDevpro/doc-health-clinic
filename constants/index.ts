@@ -1,357 +1,358 @@
 import type {
+  Doctor,
   FaqItem,
-  TeamGroupPhoto,
+  HealthTip,
+  HeroStat,
+  MedicalService,
   Testimonial,
+  WhyChooseFeature,
 } from "@/types";
 import { images } from "@/lib/images";
-import { builderLogos, trustLogos } from "@/lib/partner-logos";
 
 export const BRAND_COLORS = {
-  navy: "#1B365D",
-  green: "#C5A028",
-  grey: "#4A5568",
-  offWhite: "#FAF8F5",
-  blue: "#2C5282",
+  primary: "#0F766E",
+  secondary: "#14B8A6",
+  accent: "#38BDF8",
+  background: "#F8FAFC",
+  grey: "#64748B",
+  /** @deprecated Use primary */
+  navy: "#0F766E",
+  /** @deprecated Use secondary */
+  green: "#14B8A6",
+  /** @deprecated Use accent */
+  blue: "#38BDF8",
+  /** @deprecated Use background */
+  offWhite: "#F8FAFC",
 } as const;
 
-export const HERO_TEXT_GRADIENT = `linear-gradient(122deg, ${BRAND_COLORS.blue} 0%, ${BRAND_COLORS.navy} 48%, ${BRAND_COLORS.green} 100%)`;
+export const HERO_TEXT_GRADIENT = `linear-gradient(122deg, ${BRAND_COLORS.accent} 0%, ${BRAND_COLORS.primary} 48%, ${BRAND_COLORS.secondary} 100%)`;
 
-/** Readable on dark hero overlays (service pages, contact, etc.) */
-export const HERO_TEXT_GRADIENT_ON_DARK = `linear-gradient(122deg, #FFFFFF 0%, #F0E6CC 45%, ${BRAND_COLORS.green} 100%)`;
+/** Bright stops only  readable on dark hero / page backgrounds */
+export const HERO_TEXT_GRADIENT_ON_DARK =
+  "linear-gradient(120deg, #F0FDFA 0%, #5EEAD4 38%, #2DD4BF 72%, #99F6E4 100%)";
 
 export const brandButtonClassName =
-  "group inline-flex items-center justify-center gap-3 rounded-full border-2 border-brand-green bg-brand-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-dark hover:border-brand-green-dark bg-brand-navy";
+  "group inline-flex items-center justify-center gap-3 rounded-full border-2 border-brand-green bg-brand-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-dark hover:border-brand-green-dark";
 
 export const brandButtonClassNameSm =
-  "group inline-flex items-center justify-center rounded-full border-2 border-brand-green bg-brand-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-green-dark hover:border-brand-green-dark";
+  "group inline-flex items-center justify-center rounded-full border-2 border-brand-green bg-brand-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-navy-dark hover:border-brand-green-dark";
+
+export const brandButtonOutlineClassName =
+  "group inline-flex items-center justify-center gap-3 rounded-full border-2 border-white/80 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-brand-navy";
 
 export const company = {
-  name: "Demo Real Estate",
-  shortName: "Demo Real Estate",
-  tagline:
-    "Your trusted partner for buying, selling, and investing in homes, condos, land, and commercial properties across the United States.",
-  email: "hello@demorealestate.com",
-  phone: "+1 (555) 234-5678",
-  whatsapp: "+1 (555) 234-5678",
-  whatsappUrl: "https://wa.me/15552345678",
-  address: "8500 Preston Road, Suite 200, Plano, TX 75024, United States",
-  copyright: "Demo Real Estate",
+  name: "MedCare Health Clinic",
+  shortName: "MedCare",
+  tagline: "Your Health, Our Priority",
+  locationShort: "G-8, Islamabad",
+  description:
+    "MedCare Health Clinic is a leading private medical centre in G-8, Islamabad  offering compassionate, affordable healthcare for you and your family with FCPS-qualified doctors and modern diagnostic facilities.",
+  email: "info@medcareclinic.pk",
+  whatsapp: "+92 300 123 4567",
+  whatsappUrl: "https://wa.me/923008473200",
+  address: "Plot 15, G-8 Markaz, Islamabad, ICT 44000, Pakistan",
+  copyright: "MedCare Health Clinic",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=8500+Preston+Road,+Plano,+TX+75024&hl=en&z=15&output=embed",
+    "https://www.google.com/maps?q=G-8+Markaz,+Islamabad,+Pakistan&hl=en&z=15&output=embed",
   mapDirectionsUrl:
-    "https://www.google.com/maps/dir/?api=1&destination=Plano,+TX+75024,+United+States",
+    "https://www.google.com/maps/dir/?api=1&destination=G-8+Markaz,+Islamabad,+Pakistan",
+  workingHours: {
+    weekdays: "Monday – Friday: 9:00 AM – 9:00 PM",
+    saturday: "Saturday: 9:00 AM – 6:00 PM",
+    sunday: "Sunday: 10:00 AM – 4:00 PM (Emergency Only After Hours)",
+    emergency: "24/7 emergency desk at the clinic  dial 1122 for ambulance",
+  },
 } as const;
 
 export const navLinks = [
-  { label: "Residential", href: "/residential" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "Projects", href: "/projects" },
-  { label: "Investment", href: "/investment" },
-  { label: "Rentals", href: "/rentals" },
-  { label: "Consultancy", href: "/consultancy" },
-];
-
-export const footerLinks = [
   { label: "Home", href: "/" },
-  { label: "Residential", href: "/residential" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "Projects", href: "/projects" },
-  { label: "Investment", href: "/investment" },
-  { label: "Rentals", href: "/rentals" },
-  { label: "Consultancy", href: "/consultancy" },
-  { label: "Contact", href: "/contact" },
-];
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Doctors", href: "/doctors" },
+  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Health Tips", href: "/health-tips" },
+] as const;
+
+export const contactPageHref = "/contact";
+export const appointmentPageHref = "/appointment";
+
+export const appointmentTimeSlots = [
+  "09:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+  "06:00 PM",
+  "07:00 PM",
+  "08:00 PM",
+] as const;
+
+export const footerNavLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Doctors", href: "/doctors" },
+  { label: "Contact & Appointment", href: "/contact" },
+  { label: "Book Appointment", href: "/appointment" },
+] as const;
+
+export const departments = [
+  "General Medicine",
+  "Cardiology",
+  "Dentistry",
+  "Pediatrics",
+  "Orthopedics",
+  "Neurology",
+  "Dermatology",
+  "Gynecology",
+  "Eye Care",
+  "Diagnostic Lab",
+  "Emergency Care",
+  "Physiotherapy",
+] as const;
 
 export const socialLinks = [
   { label: "LinkedIn", href: "#", icon: "linkedin" },
   { label: "Facebook", href: "#", icon: "facebook" },
   { label: "Instagram", href: "#", icon: "instagram" },
   { label: "Twitter", href: "#", icon: "twitter" },
+] as const;
+
+export const heroStats: HeroStat[] = [
+  { value: 20, suffix: "+", label: "Experienced Doctors" },
+  { value: 15, suffix: "+", label: "Medical Departments" },
+  { value: 25000, suffix: "+", label: "Happy Patients" },
+  { value: 0, suffix: "", label: "Emergency Support", isText: true, textValue: "24/7" },
 ];
 
-export const globalStats = {
-  intro:
-    "Demo Real Estate connects buyers, sellers, and investors with verified listings and new developments — backed by local market insights, transparent dealings, and expert guidance at every step.",
-  left: [
+export const aboutContent = {
+  mission:
+    "To provide accessible, compassionate, and world-class healthcare that empowers every patient to live a healthier, fuller life  treating each person with dignity, respect, and individualized attention.",
+  vision:
+    "To be the most trusted medical centre in Islamabad and across the capital region  recognised for clinical excellence, affordable care, and a commitment to healthier Pakistani families.",
+  experience: 18,
+  highlights: [
     {
-      value: 12,
-      suffix: "+",
-      title: "Years of Experience",
+      title: "Patient-First Philosophy",
       description:
-        "Trusted real estate advisory serving homebuyers and investors in major U.S. markets.",
+        "Every decision we make starts with your comfort, safety, and well-being. We listen carefully and involve you in every step of your care plan.",
     },
     {
-      value: 2500,
-      suffix: "+",
-      title: "Properties Listed",
+      title: "Modern Facilities",
       description:
-        "Single-family homes, condos, townhomes, land, and commercial spaces for every budget.",
-    },
-  ],
-  right: [
-    {
-      value: 50,
-      suffix: "+",
-      title: "New Developments",
-      description:
-        "Featured communities from top builders including master-planned neighborhoods and urban infill projects.",
-      icon: "/images/svg/global-stats-icon-3.svg",
+        "State-of-the-art diagnostic equipment, sterile surgical suites, and thoughtfully designed spaces that make every visit calm and reassuring.",
     },
     {
-      value: 100,
-      suffix: "%",
-      title: "Verified Listings",
+      title: "Experienced Team",
       description:
-        "Every property is checked for title, ownership, and market pricing before it goes live.",
-      icon: "/images/svg/finance-mode.svg",
-    },
-    {
-      title: "Nationwide Coverage",
-      description:
-        "Serving Dallas–Fort Worth, Austin, Phoenix, Miami, Nashville, and growing markets coast to coast.",
-      icon: "/images/svg/global-stats-icon-1.svg",
-      isText: true,
+        "Board-certified physicians and caring support staff with decades of combined experience across every major medical specialty.",
     },
   ],
-};
+} as const;
 
-export const certificates = [...trustLogos];
-
-export const clientLogos = [...builderLogos];
-
-export const projectSlides = [
-  { src: images.luxuryEstate, alt: "Luxury home for sale" },
-  { src: images.suburbanStreet, alt: "Suburban neighborhood street" },
-  { src: images.communityAerial, alt: "Master-planned community" },
-  { src: images.houseExterior, alt: "Single-family home exterior" },
-];
-
-export const faqs: FaqItem[] = [
+export const medicalServices: MedicalService[] = [
   {
-    id: "services",
-    question: "What services does Demo Real Estate provide?",
-    answer:
-      "We offer residential and commercial sales, new construction advisory, rental listings, investment guidance, and full transaction support — from property shortlisting through closing.",
-  },
-  {
-    id: "areas",
-    question: "Which cities and markets do you cover?",
-    answer:
-      "We serve Dallas–Fort Worth, Austin, Houston, Phoenix, Miami, Nashville, Denver, and surrounding suburbs — including master-planned communities, urban condos, and suburban neighborhoods.",
-  },
-  {
-    id: "quote",
-    question: "How do I schedule a property showing?",
-    answer:
-      "Contact us through the website or call our team. Share your budget and preferred area — we will shortlist verified options and arrange showings at your convenience.",
-  },
-  {
-    id: "verification",
-    question: "Are your property listings verified?",
-    answer:
-      "Yes. Every listing is checked for title, ownership, and market pricing before it is published — giving you confidence before any earnest money deposit.",
-  },
-];
-
-export const residentialFaqs: FaqItem[] = [
-  {
-    id: "res-types",
-    question: "What residential properties do you offer?",
-    answer:
-      "We list single-family homes, townhomes, condos, vacant land, and luxury estates across top neighborhoods — available for sale and lease.",
-  },
-  {
-    id: "res-budget",
-    question: "Can you help me find a home within my budget?",
-    answer:
-      "Absolutely. Share your budget, preferred city or suburb, and must-haves — our agents will shortlist the best verified options for you.",
-  },
-  {
-    id: "res-docs",
-    question: "What should I review before making an offer?",
-    answer:
-      "We guide you through title review, HOA documents, inspection reports, and closing costs — ensuring a secure and transparent purchase.",
-  },
-  {
-    id: "res-visit",
-    question: "Do you arrange property showings?",
-    answer:
-      "Yes. We schedule in-person tours, provide virtual walkthroughs for out-of-state buyers, and accompany you through every step of the buying process.",
-  },
-];
-
-export const commercialFaqs: FaqItem[] = [
-  {
-    id: "com-types",
-    question: "What commercial properties are available?",
-    answer:
-      "We offer retail storefronts, office suites, mixed-use buildings, industrial warehouses, and commercial land in prime business districts and suburban corridors.",
-  },
-  {
-    id: "com-roi",
-    question: "Can you advise on commercial investment returns?",
-    answer:
-      "Yes. Our team provides cap rate estimates, tenant demand analysis, and market comparisons to help you choose high-potential commercial assets.",
-  },
-  {
-    id: "com-lease",
-    question: "Do you handle commercial leasing?",
-    answer:
-      "We assist with both sales and lease transactions — matching tenants with suitable spaces and owners with qualified buyers.",
-  },
-  {
-    id: "com-location",
-    question: "Which commercial areas do you specialize in?",
-    answer:
-      "We cover downtown districts, suburban retail centers, and high-traffic corridors across Texas, Arizona, Florida, and other major U.S. metros.",
-  },
-];
-
-export const projectsFaqs: FaqItem[] = [
-  {
-    id: "proj-list",
-    question: "Which new developments do you feature?",
-    answer:
-      "We showcase communities from national and regional builders — master-planned neighborhoods, urban condo projects, and suburban single-family developments.",
-  },
-  {
-    id: "proj-prelaunch",
-    question: "Do you offer pre-construction opportunities?",
-    answer:
-      "Yes. We connect buyers with early pricing, builder incentives, and reservation options on newly announced and upcoming communities.",
-  },
-  {
-    id: "proj-installment",
-    question: "Are builder financing options available?",
-    answer:
-      "Most featured developments offer flexible financing — our team explains down payment, monthly payments, and estimated completion timelines clearly.",
-  },
-  {
-    id: "proj-updates",
-    question: "How do I track construction progress?",
-    answer:
-      "We provide regular build updates, phase release announcements, and move-in timelines for all featured new home communities.",
-  },
-];
-
-export const investmentFaqs: FaqItem[] = [
-  {
-    id: "inv-types",
-    question: "What investment options do you recommend?",
-    answer:
-      "We advise on rental properties, fix-and-flip opportunities, land banking, and pre-construction investments based on your budget and return goals.",
-  },
-  {
-    id: "inv-returns",
-    question: "What returns can I expect from real estate?",
-    answer:
-      "Returns vary by market, property type, and hold period. We provide market-backed valuations and historical trend data to guide your decision.",
-  },
-  {
-    id: "inv-overseas",
-    question: "Do you serve out-of-state and remote buyers?",
-    answer:
-      "Yes. We offer virtual tours, remote closing support, and dedicated advisory for clients buying in a market they don't live in.",
-  },
-  {
-    id: "inv-risk",
-    question: "How do you minimize investment risk?",
-    answer:
-      "We verify builder credentials, zoning approvals, and local demand before recommending any investment opportunity.",
-  },
-];
-
-export const rentalsFaqs: FaqItem[] = [
-  {
-    id: "rent-types",
-    question: "What rental properties do you list?",
-    answer:
-      "We list apartments, houses, townhomes, office spaces, and retail units for rent across major U.S. cities — for families, professionals, and businesses.",
-  },
-  {
-    id: "rent-process",
-    question: "How does the rental process work?",
-    answer:
-      "Browse listings, schedule showings, and finalize lease agreements with our support — we handle applications and tenant–landlord coordination.",
-  },
-  {
-    id: "rent-deposit",
-    question: "What are typical rental terms?",
-    answer:
-      "Standard terms include first month's rent, security deposit, and lease duration. We explain all terms clearly before you sign.",
-  },
-  {
-    id: "rent-list",
-    question: "Can I list my property for rent?",
-    answer:
-      "Yes. Contact us with your property details and we will market it to qualified tenants through our platform and network.",
-  },
-];
-
-export const consultancyFaqs: FaqItem[] = [
-  {
-    id: "con-services",
-    question: "What does property consultancy include?",
-    answer:
-      "Our consultancy covers market analysis, property valuation, contract review, closing coordination, and investment strategy planning.",
-  },
-  {
-    id: "con-fees",
-    question: "How are consultancy fees structured?",
-    answer:
-      "Fees depend on service scope — sales commission, advisory packages, or flat consultation rates. We provide transparent pricing upfront.",
-  },
-  {
-    id: "con-legal",
-    question: "Do you assist with legal and closing procedures?",
-    answer:
-      "Yes. We guide you through title insurance, escrow, HOA approvals, and closing documentation for a smooth, secure transaction.",
-  },
-  {
-    id: "con-sell",
-    question: "Can you help me sell my property?",
-    answer:
-      "Absolutely. We market your property, connect you with verified buyers, and manage negotiations through to closing.",
-  },
-];
-
-/** @deprecated Use residentialFaqs */
-export const cleaningFaqs = residentialFaqs;
-/** @deprecated Use commercialFaqs */
-export const flooringFaqs = commercialFaqs;
-/** @deprecated Use projectsFaqs */
-export const itInfrastructureFaqs = projectsFaqs;
-/** @deprecated Use investmentFaqs */
-export const hvacFaqs = investmentFaqs;
-/** @deprecated Use rentalsFaqs */
-export const paintingFaqs = rentalsFaqs;
-/** @deprecated Use consultancyFaqs */
-export const poolFaqs = consultancyFaqs;
-
-export const teamGroupPhotos: TeamGroupPhoto[] = [
-  {
-    id: "team-1",
-    image: images.team1,
-    alt: "Demo Real Estate sales team",
-    caption: "Sales & Advisory",
+    id: "general-medicine",
+    title: "General Medicine",
     description:
-      "Licensed agents helping clients find the perfect home or investment across U.S. markets.",
+      "Comprehensive primary care for adults  routine checkups, chronic disease management, and preventive screenings tailored to your lifestyle.",
+    icon: "stethoscope",
   },
   {
-    id: "team-2",
-    image: images.team2,
-    alt: "Demo Real Estate client relations team",
-    caption: "Client Relations",
+    id: "cardiology",
+    title: "Cardiology",
     description:
-      "Dedicated professionals ensuring smooth transactions and clear communication from offer to close.",
+      "Advanced heart health diagnostics, ECG monitoring, and personalized treatment plans to protect your cardiovascular well-being.",
+    icon: "heart",
   },
   {
-    id: "team-3",
-    image: images.team3,
-    alt: "Demo Real Estate field team",
-    caption: "Showings & Inspections",
+    id: "dentistry",
+    title: "Dentistry",
     description:
-      "Local specialists conducting property tours and market verification in neighborhoods nationwide.",
+      "From routine cleanings to cosmetic procedures, our dental team keeps your smile healthy, confident, and pain-free.",
+    icon: "tooth",
+  },
+  {
+    id: "pediatrics",
+    title: "Pediatrics",
+    description:
+      "Gentle, expert care for infants, children, and adolescents  including vaccinations, growth monitoring, and developmental assessments.",
+    icon: "baby",
+  },
+  {
+    id: "orthopedics",
+    title: "Orthopedics",
+    description:
+      "Specialized treatment for bones, joints, and muscles  from sports injuries to arthritis management and surgical rehabilitation.",
+    icon: "bone",
+  },
+  {
+    id: "neurology",
+    title: "Neurology",
+    description:
+      "Expert diagnosis and care for neurological conditions including migraines, epilepsy, stroke recovery, and nerve disorders.",
+    icon: "brain",
+  },
+  {
+    id: "dermatology",
+    title: "Dermatology",
+    description:
+      "Skin health solutions for acne, eczema, psoriasis, mole checks, and cosmetic dermatology with the latest treatment options.",
+    icon: "skin",
+  },
+  {
+    id: "gynecology",
+    title: "Gynecology",
+    description:
+      "Compassionate women's health services  annual exams, prenatal care, fertility counseling, and menopause management.",
+    icon: "female",
+  },
+  {
+    id: "eye-care",
+    title: "Eye Care",
+    description:
+      "Complete vision care including eye exams, glaucoma screening, cataract evaluation, and prescription eyewear consultations.",
+    icon: "eye",
+  },
+  {
+    id: "diagnostic-lab",
+    title: "Diagnostic Lab",
+    description:
+      "Fast, accurate blood work, pathology, and imaging services with results delivered directly to your physician for prompt action.",
+    icon: "lab",
+  },
+  {
+    id: "emergency-care",
+    title: "Emergency Care",
+    description:
+      "Round-the-clock emergency services with rapid triage, on-site specialists, and seamless hospital coordination when needed.",
+    icon: "ambulance",
+  },
+  {
+    id: "physiotherapy",
+    title: "Physiotherapy",
+    description:
+      "Personalized rehabilitation programs to restore mobility, reduce pain, and accelerate recovery after injury or surgery.",
+    icon: "physio",
+  },
+];
+
+export const whyChooseUs: WhyChooseFeature[] = [
+  {
+    id: "experienced-doctors",
+    title: "Experienced Doctors",
+    description:
+      "Board-certified specialists with years of hands-on clinical experience across every department.",
+    icon: "doctor",
+  },
+  {
+    id: "modern-equipment",
+    title: "Modern Equipment",
+    description:
+      "Cutting-edge diagnostic and treatment technology for faster, more accurate results.",
+    icon: "equipment",
+  },
+  {
+    id: "affordable",
+    title: "Affordable Healthcare",
+    description:
+      "Transparent PKR fees, Sehat Sahulat panel acceptance, and easy instalment plans for every family.",
+    icon: "affordable",
+  },
+  {
+    id: "online-appointments",
+    title: "Online Appointments",
+    description:
+      "Book, reschedule, or cancel appointments online in minutes  no phone queues required.",
+    icon: "calendar",
+  },
+  {
+    id: "emergency",
+    title: "24/7 Emergency",
+    description:
+      "Always-on emergency support with rapid response teams ready when every second counts.",
+    icon: "emergency",
+  },
+  {
+    id: "fast-diagnosis",
+    title: "Fast Diagnosis",
+    description:
+      "On-site lab and imaging mean most test results within hours, not days.",
+    icon: "speed",
+  },
+  {
+    id: "safe-environment",
+    title: "Safe Environment",
+    description:
+      "Hospital-grade sterilization protocols and infection control standards you can trust.",
+    icon: "shield",
+  },
+  {
+    id: "satisfaction",
+    title: "Patient Satisfaction",
+    description:
+      "A 98% patient satisfaction rate built on genuine care, clear communication, and follow-through.",
+    icon: "star",
+  },
+];
+
+export const doctors: Doctor[] = [
+  {
+    id: "dr-fatima",
+    name: "Dr. Fatima Khan",
+    specialization: "Cardiology",
+    qualification: "MBBS, FCPS (Cardiology)  Aga Khan University",
+    experience: 15,
+    bio: "Dr. Fatima specialises in preventive cardiology and hypertension management, serving patients across Islamabad and the capital region with evidence-based heart care.",
+    image: images.doctor1,
+  },
+  {
+    id: "dr-hassan",
+    name: "Dr. Hassan Ahmed",
+    specialization: "General Medicine",
+    qualification: "MBBS, MRCP  King Edward Medical University",
+    experience: 18,
+    bio: "With nearly two decades in primary care, Dr. Hassan is known across G-8 for his thorough consultations and honest, patient-first approach.",
+    image: images.doctor2,
+  },
+  {
+    id: "dr-ayesha",
+    name: "Dr. Ayesha Malik",
+    specialization: "Pediatrics",
+    qualification: "MBBS, FCPS (Paediatrics)  Pakistan Institute of Medical Sciences",
+    experience: 12,
+    bio: "Dr. Ayesha creates a warm, child-friendly environment trusted by hundreds of Pakistani families for vaccinations, growth checks, and paediatric care.",
+    image: images.doctor3,
+  },
+  {
+    id: "dr-usman",
+    name: "Dr. Usman Raza",
+    specialization: "Orthopedics",
+    qualification: "MBBS, FRCS  Allama Iqbal Medical College",
+    experience: 14,
+    bio: "A specialist in sports injuries and joint replacement, Dr. Usman has helped athletes and everyday patients recover mobility and live pain-free.",
+    image: images.doctor4,
+  },
+  {
+    id: "dr-sana",
+    name: "Dr. Sana Iqbal",
+    specialization: "Dermatology",
+    qualification: "MBBS, MCPS (Dermatology)  Fatima Jinnah Medical University",
+    experience: 10,
+    bio: "Dr. Sana treats acne, eczema, and pigmentation common in Pakistani climates, combining medical and cosmetic dermatology for healthy, confident skin.",
+    image: images.doctor5,
+  },
+  {
+    id: "dr-kamran",
+    name: "Dr. Kamran Siddiqui",
+    specialization: "Neurology",
+    qualification: "MBBS, FCPS (Neurology)  Aga Khan University Hospital",
+    experience: 16,
+    bio: "Dr. Kamran leads our neurology department with expertise in migraines, epilepsy, and stroke recovery  backed by the latest diagnostic technology.",
+    image: images.doctor6,
   },
 ];
 
@@ -359,49 +360,170 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     quote:
-      "Demo Real Estate provided clear advice and a fast response. We secured a fair price on our lot with absolute confidence. Their professionalism is unmatched.",
-    name: "Michael Carter",
-    role: "Investor",
-    company: "Dallas, TX",
+      "From the moment I walked in, I felt genuinely cared for. Dr. Hassan explained everything in Urdu and English, and the fees were very reasonable. MedCare has earned our family's complete trust.",
+    name: "Nadia Sheikh",
+    role: "Patient",
+    company: "Islamabad",
+    image: images.patient1,
+    rating: 5,
   },
   {
     id: "2",
     quote:
-      "The team explained all the closing costs and taxes in simple terms. There were zero surprises, and the entire process was transparent and smooth.",
-    name: "Jennifer Walsh",
-    role: "Home Buyer",
-    company: "Austin, TX",
+      "I was anxious about my heart tests, but Dr. Fatima and her team made me feel safe throughout. The lab results came the same day  something you rarely find in Islamabad.",
+    name: "Tariq Mahmood",
+    role: "Cardiology Patient",
+    company: "G-8, Islamabad",
+    image: images.patient2,
+    rating: 5,
   },
   {
     id: "3",
     quote:
-      "Their market data combined with virtual tours helped me shortlist properties in days, not weeks. A truly five-star service for out-of-state buyers.",
-    name: "David Chen",
-    role: "Remote Buyer",
-    company: "Seattle, WA",
+      "Booking online was simple, and I was seen within 15 minutes. Clear diagnosis, fair PKR pricing, and no unnecessary tests. This is how healthcare should work in Pakistan.",
+    name: "Hina Rizvi",
+    role: "Patient",
+    company: "Karachi",
+    image: images.patient3,
+    rating: 5,
   },
   {
     id: "4",
     quote:
-      "We found our dream home in Frisco through Demo Real Estate. From shortlisting to key handover, every step was handled with care and expertise.",
-    name: "Sarah Mitchell",
-    role: "Home Buyer",
-    company: "Frisco, TX",
+      "Our son was scared of doctors until we met Dr. Ayesha. She is so patient and kind with children  we travel from Faisalabad just for her paediatric appointments.",
+    name: "Bilal & Saima Akhtar",
+    role: "Parents",
+    company: "Faisalabad",
+    image: images.patient4,
+    rating: 5,
   },
   {
     id: "5",
     quote:
-      "As a commercial investor, I appreciated their cap rate analysis and location insights. They helped me acquire a high-yield retail unit in a prime corridor.",
-    name: "James Rodriguez",
-    role: "Commercial Investor",
-    company: "Miami, FL",
+      "After my knee injury, Dr. Usman and the physiotherapy team got me walking again in weeks. Professional, encouraging, and truly results-driven care at an affordable cost.",
+    name: "Ahmed Rauf",
+    role: "Orthopedics Patient",
+    company: "Islamabad",
+    image: images.patient5,
+    rating: 5,
   },
   {
     id: "6",
     quote:
-      "Listing our home for rent was effortless. They found qualified tenants within two weeks and handled all the lease paperwork professionally.",
-    name: "Emily Brooks",
-    role: "Property Owner",
-    company: "Nashville, TN",
+      "When my father had chest pain at midnight, MedCare's emergency line responded immediately. Their calm professionalism and quick action made all the difference. Shukriya MedCare.",
+    name: "Zainab Hussain",
+    role: "Emergency Care",
+    company: "Rawalpindi",
+    image: images.patient6,
+    rating: 5,
   },
 ];
+
+export const healthTips: HealthTip[] = [
+  {
+    id: "blood-pressure",
+    title: "Blood Pressure: Watch the Namak",
+    excerpt:
+      "High BP is common in Pakistani adults. Small changes to salt, chai, and routine checks can prevent serious problems later.",
+    content:
+      "At MedCare we see patients every week whose blood pressure has crept up without any obvious symptoms  until headaches, dizziness, or a routine reading flags it. Extra salt in daal, achaar, restaurant food, and even multiple cups of strong chai can add up quickly. Try tasting food before reaching for the namak dani, choose home-cooked meals when you can, and walk for 20–30 minutes most days  even a stroll in the park after Maghrib helps. If you are over 40, have diabetes in the family, or already take BP medicine, get your pressure checked at least every few months. Our nurses can record it in under five minutes at reception; no appointment needed for a quick reading. If your home monitor shows readings above 140/90 on several days, book a consultation  early treatment protects your heart, kidneys, and eyes.",
+    image: images.healthTipBloodPressure,
+  },
+  {
+    id: "annual-checkups",
+    title: "What Your Annual Check-Up Covers",
+    excerpt:
+      "A yearly visit is not just for when you feel unwell. Here is what our doctors actually look at during a routine exam.",
+    content:
+      "Many patients tell us they only visit when something hurts. A proper annual check-up is different: it is a chance to catch issues while they are still easy to treat. At MedCare, a typical wellness visit includes blood pressure and weight, a listen to your heart and lungs, basic blood tests (CBC, sugar, cholesterol, and kidney function where needed), and a conversation about sleep, stress, and family history. Women may be advised on anaemia screening; men over 45 often benefit from prostate discussion; anyone with a family history of diabetes or heart disease should not skip yearly labs. Bring your current medicines  including herbal or home remedies  and any reports from other hospitals. General consultation starts from PKR 2,500; we explain lab costs upfront before anything is sent to our on-site laboratory. Most results are ready within 24 hours.",
+    image: images.healthTipCheckup,
+  },
+  {
+    id: "diabetes",
+    title: "Diabetes: Eating Well with Desi Food",
+    excerpt:
+      "You do not have to give up roti and daal. Portion size, timing, and regular sugar checks matter more than cutting everything out.",
+    content:
+      "Type 2 diabetes is rising fast in Islamabad, often linked to weight gain, sugary chai, fizzy drinks, and long hours sitting at a desk. The good news: most patients can stay well without extreme diets. Choose whole wheat roti over double naan portions, fill half the plate with sabzi, and keep rice to one modest serving. Avoid skipping breakfast and then overeating at dinner  steady meal times help blood sugar stay stable. If you drink chai, reduce sugar gradually or switch to doodh patti with less shakar. Walk after meals when possible; even 15 minutes makes a difference. Check your fasting sugar or HbA1c as your doctor advises  we run both at our lab and can book follow-ups with our general physician or medicine specialist. Never stop tablets or insulin on your own; if readings are often high or you feel very thirsty, weak, or confused, come in the same day.",
+    image: images.healthTipDiabetes,
+  },
+  {
+    id: "vaccination",
+    title: "Child Vaccines: EPI Schedule Made Simple",
+    excerpt:
+      "Polio drops, BCG, measles, and hepatitis B  here is how to stay on track and what to bring to each visit.",
+    content:
+      "Parents often arrive at our paediatric desk unsure which injection is due next. Pakistan's EPI (Expanded Programme on Immunization) schedule is free at government centres; at MedCare we offer the same vaccines on a convenient private timetable with appointment reminders. Birth: BCG and OPV. At 6, 10, and 14 weeks: pentavalent, pneumococcal, and polio doses. At 9 months: measles. Boosters follow at 15–18 months and before school entry. Always bring your child's green immunisation card  our staff will stamp it after each dose. Mild fever or a sore leg for a day is normal; give paracetamol as directed on the pack and avoid bathing the injection site for a few hours. If a dose was missed because of travel or illness, do not restart the whole course; our paediatrician will plan catch-up doses. Vaccines protect your child and help keep polio and measles out of our community.",
+    image: images.healthTipVaccination,
+  },
+  {
+    id: "smog-season",
+    title: "Smog Season in Islamabad: Protect Your Lungs",
+    excerpt:
+      "From late autumn through winter, air quality drops across the capital. Asthma, cough, and chest tightness spike  here is how to cope.",
+    content:
+      "Every year between October and January, Islamabad's smog pushes more patients to our emergency desk with cough, wheezing, burning eyes, and chest discomfort  especially children and older adults. On high AQI days, limit outdoor exercise, keep windows closed during peak traffic hours, and wear a proper N95 mask if you must be outside for long. Asthma patients should carry their inhaler and follow their action plan; do not wait until breathing becomes difficult at night. Use a humidifier if indoor air feels dry, but clean it regularly to avoid mould. If a cough lasts more than two weeks, you bring up blood, or a child has fast breathing or blue lips, come to the clinic or call 1122 for ambulance help. Our G-8 location is easy to reach from F-6, F-7, and I-8  walk-ins are seen for urgent respiratory symptoms during working hours.",
+    image: images.healthTipSmog,
+  },
+  {
+    id: "dental-hygiene",
+    title: "Teeth, Gums, and Habits We See Every Day",
+    excerpt:
+      "Chai stains, sweet paan, and skipped flossing lead to cavities and gum bleeding. Daily care and a six-month scale-and-polish go a long way.",
+    content:
+      "Our dental team treats a lot of preventable problems: sensitivity from aggressive brushing, bleeding gums from built-up plaque, and decay worsened by constant chai, mithai, and supari. Brush twice daily with a soft brush and fluoride paste  two full minutes, not a quick scrub. Floss or use an interdental brush at night; food stuck between molars is a common cause of bad breath and cavities. Rinse your mouth with water after chai or cold drinks if you cannot brush right away. Children should have their first dental check by age three, or earlier if you notice brown spots on teeth. Adults should book a professional cleaning every six months; it removes tartar that home brushing cannot. We offer basic fillings, extractions, and hygiene visits at transparent PKR rates. Sudden swelling, severe pain, or a knocked-out tooth needs same-day attention  WhatsApp our front desk and we will fit you in.",
+    image: images.healthTipDental,
+  },
+];
+
+export const faqs: FaqItem[] = [
+  {
+    id: "appointments",
+    question: "How do I book an appointment at MedCare Health Clinic?",
+    answer:
+      "Book online through our appointment page, WhatsApp us, email info@medcareclinic.pk, or visit our G-8 Markaz reception during working hours. Online bookings are confirmed within one hour via WhatsApp or SMS.",
+  },
+  {
+    id: "insurance",
+    question: "Do you accept health insurance in Pakistan?",
+    answer:
+      "Yes. We are empaneled with Sehat Sahulat Programme, State Life, EFU Health, Jubilee General, Adamjee Insurance, and other major panels. Contact our billing desk to verify your coverage before your visit.",
+  },
+  {
+    id: "emergency",
+    question: "What should I do in a medical emergency?",
+    answer:
+      "Visit our 24/7 emergency desk at the G-8 clinic immediately. For ambulance support, dial national emergency 1122. Our on-call specialists are available around the clock for urgent cases.",
+  },
+  {
+    id: "hours",
+    question: "What are your clinic working hours?",
+    answer:
+      "Monday to Friday: 9:00 AM – 9:00 PM. Saturday: 9:00 AM – 6:00 PM. Sunday: 10:00 AM – 4:00 PM. Emergency support is available 24 hours a day, every day of the year.",
+  },
+  {
+    id: "fees",
+    question: "What are your consultation fees?",
+    answer:
+      "General consultation starts from PKR 2,500. Specialist consultations range from PKR 3,500 to PKR 6,000 depending on the department. We provide a clear cost estimate before any procedure and offer easy instalment options.",
+  },
+  {
+    id: "online-booking",
+    question: "Can I reschedule or cancel my appointment online?",
+    answer:
+      "Yes. Use the confirmation SMS link to reschedule or cancel up to 3 hours before your appointment at no charge. For same-day changes, WhatsApp our front desk.",
+  },
+];
+
+export const seoKeywords = [
+  "medical clinic Islamabad",
+  "doctor in G-8 Islamabad",
+  "healthcare Pakistan",
+  "book doctor appointment Islamabad",
+  "family medicine Pakistan",
+  "cardiology clinic Islamabad",
+  "paediatrics Islamabad",
+  "emergency clinic Pakistan",
+  "MedCare Health Clinic",
+  "private hospital Islamabad",
+] as const;

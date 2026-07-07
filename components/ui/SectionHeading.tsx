@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { HERO_TEXT_GRADIENT } from "@/constants";
+import { HERO_TEXT_GRADIENT, HERO_TEXT_GRADIENT_ON_DARK } from "@/constants";
 
 type SectionHeadingProps = {
   children: ReactNode;
@@ -40,14 +40,19 @@ export function HeroHeading({
 export function GradientText({
   children,
   className = "",
+  variant = "light",
 }: {
   children: ReactNode;
   className?: string;
+  variant?: "light" | "dark";
 }) {
+  const gradient =
+    variant === "dark" ? HERO_TEXT_GRADIENT_ON_DARK : HERO_TEXT_GRADIENT;
+
   return (
     <span
       className={`bg-clip-text text-transparent ${className}`}
-      style={{ backgroundImage: HERO_TEXT_GRADIENT }}
+      style={{ backgroundImage: gradient }}
     >
       {children}
     </span>

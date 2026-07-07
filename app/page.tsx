@@ -1,23 +1,25 @@
+import { PageBottom } from "@/components/global/PageBottom";
 import { HeroSection } from "@/view/home/HeroSection";
-import { GlobalStatsSection } from "@/view/home/GlobalStatsSection";
-import { TrustedSection } from "@/view/home/TrustedSection";
+import { AboutSection } from "@/view/about/AboutSection";
 import { HomeGallerySection } from "@/view/home/HomeGallerySection";
+import { ServicesSection } from "@/view/services/ServicesSection";
+import { WhyChooseUsSection } from "@/view/why-choose-us/WhyChooseUsSection";
+import { DoctorsSection } from "@/view/doctors/DoctorsSection";
 import { TestimonialsSection } from "@/view/home/TestimonialsSection";
-import { TeamSection } from "@/view/home/TeamSection";
-import { FaqSection } from "@/view/home/FaqSection";
-import { ContactCtaSection } from "@/view/home/ContactCtaSection";
+import { HealthTipsSection } from "@/view/health-tips/HealthTipsSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <GlobalStatsSection />
-      <TrustedSection />
+      <AboutSection variant="preview" />
       <HomeGallerySection />
+      <WhyChooseUsSection limit={4} />
+      <ServicesSection limit={6} showViewAll />
+      <DoctorsSection limit={3} showViewAll />
       <TestimonialsSection />
-      <TeamSection />
-      <FaqSection />
-      <ContactCtaSection />
+      <HealthTipsSection limit={3} showViewAll />
+      <PageBottom />
     </>
   );
 }

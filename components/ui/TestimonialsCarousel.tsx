@@ -4,7 +4,7 @@ import Image from "next/image";
 import { type ReactNode, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa6";
 import type { Testimonial } from "@/types";
 
 import "swiper/css";
@@ -16,9 +16,24 @@ type TestimonialsCarouselProps = {
   className?: string;
 };
 
+function StarRating({ rating = 5 }: { rating?: number }) {
+  return (
+    <div className="mb-4 flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <FaStar
+          key={i}
+          className={`h-4 w-4 ${i < rating ? "text-amber-400" : "text-gray-200"}`}
+          aria-hidden
+        />
+      ))}
+    </div>
+  );
+}
+
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="flex h-full min-w-0 flex-col rounded-[12px] border border-gray-100 bg-white p-2 shadow-[0_10px_40px_-20px_rgba(4,36,74,0.15)] md:rounded-[24px] md:p-8">
+    <article className="flex h-full min-w-0 flex-col rounded-[12px] border border-gray-100 bg-white p-2 shadow-[0_10px_40px_-20px_rgba(15,118,110,0.12)] md:rounded-[24px] md:p-8">
+      <StarRating rating={testimonial.rating} />
       <p className="mb-6 flex-1 break-words text-base leading-relaxed text-brand-grey md:text-lg">
         &ldquo;{testimonial.quote}&rdquo;
       </p>

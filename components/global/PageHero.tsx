@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroButton } from "@/components/global/HeroButton";
 import { BRAND_COLORS, HERO_TEXT_GRADIENT_ON_DARK } from "@/constants";
+import { images } from "@/lib/images";
 import type { PageHeroProps } from "@/types";
 
-const defaultBg = "/images/hero-images/ContactHeroImage.jpg";
 const defaultAccent = {
   from: BRAND_COLORS.blue,
   via: BRAND_COLORS.navy,
@@ -18,13 +18,14 @@ const defaultSplitOverlay =
   "bg-gradient-to-br from-brand-off-white/60 via-brand-off-white/30 to-brand-navy/10";
 
 const defaultBackgroundOverlay =
-  "bg-gradient-to-r from-brand-navy to-transparent";
+  "bg-gradient-to-r from-brand-navy/80 via-brand-navy/55 to-brand-navy/35";
 
 export function PageHero({
   headingLine1,
   headingLine2,
   description,
-  backgroundImage = defaultBg,
+  backgroundImage = images.heroHome,
+  backgroundAlt = "MedCare Health Clinic",
   waveImage,
   bannerImage,
   bannerAlt = "Page banner",
@@ -50,25 +51,33 @@ export function PageHero({
     (isBackground ? defaultBackgroundOverlay : defaultSplitOverlay);
 
   return (
-    <section
-      className="relative flex min-h-[70vh] overflow-hidden bg-cover bg-center bg-no-repeat pt-[35px] lg:min-h-[85vh]"
-      style={{ backgroundImage: `url('${backgroundImage}')` }}
-    >
+    <section className="relative flex min-h-[70vh] overflow-hidden bg-brand-navy pt-[35px] lg:min-h-[85vh]">
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt={backgroundAlt}
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      )}
+
       <div
-        className={`pointer-events-none absolute inset-0 ${overlayClass}`}
+        className={`pointer-events-none absolute inset-0 z-[1] ${overlayClass}`}
         aria-hidden
       />
 
       {!isBackground && waveImage && (
         <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30"
+          className="pointer-events-none absolute inset-0 z-[1] bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url('${waveImage}')` }}
           aria-hidden
         />
       )}
 
       {showGlobe && (
-        <div className="animate-fadein pointer-events-none absolute bottom-0 left-0 z-0 w-full opacity-50">
+        <div className="animate-fadein pointer-events-none absolute bottom-0 left-0 z-[1] w-full opacity-50">
           <Image
             src="/images/parkonic-global.png"
             alt=""
@@ -84,11 +93,11 @@ export function PageHero({
       {!isBackground && (
         <>
           <div
-            className="animate-hero-glow pointer-events-none absolute -top-20 right-0 h-72 w-72 rounded-full bg-brand-green/20 blur-3xl"
+            className="animate-hero-glow pointer-events-none absolute -top-20 right-0 z-[1] h-72 w-72 rounded-full bg-brand-green/20 blur-3xl"
             aria-hidden
           />
           <div
-            className="animate-hero-glow-delayed pointer-events-none absolute bottom-10 left-0 h-64 w-64 rounded-full bg-brand-navy/15 blur-3xl"
+            className="animate-hero-glow-delayed pointer-events-none absolute bottom-10 left-0 z-[1] h-64 w-64 rounded-full bg-brand-navy/15 blur-3xl"
             aria-hidden
           />
         </>

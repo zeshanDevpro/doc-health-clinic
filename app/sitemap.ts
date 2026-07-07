@@ -1,22 +1,22 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site-metadata";
+
+const routes = [
+  "",
+  "/about",
+  "/services",
+  "/doctors",
+  "/why-choose-us",
+  "/health-tips",
+  "/contact",
+  "/appointment",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.demorealestate.com";
-  const routes = [
-    "",
-    "/residential",
-    "/commercial",
-    "/projects",
-    "/investment",
-    "/rentals",
-    "/consultancy",
-    "/contact",
-  ];
-
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${siteUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
+    changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.8,
   }));
 }

@@ -1,27 +1,21 @@
-import { ImageAnimation } from "@/components/global/ImageAnimation/ImageAnimation";
+import { ImageAnimation } from "@/components/global/ImageAnimation";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { homeAnimationItems } from "@/view/home/home-projects";
+import { homeAnimationItems } from "@/view/home/home-animation-items";
 
 export function HomeGallerySection() {
   return (
-    <section id="featured-properties" className="w-full scroll-mt-24">
-      <Container className="px-2 pb-8 pt-[50px] md:px-6 md:pb-10 md:pt-[100px] lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <SectionHeading>
-              Featured <span>Properties</span>
-            </SectionHeading>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="mt-4 leading-relaxed text-parkonic-primary md:mt-5 md:text-lg">
-              Handpicked selection of the best properties available for sale and
-              rent — residential plots, apartments, villas, and commercial spaces
-              across the United States.
-            </p>
-          </Reveal>
-        </div>
+    <section className="w-full bg-brand-surface">
+      <Container className="px-2 pb-6 pt-16 md:px-6 md:pb-8 md:pt-24 lg:px-10">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">
+            Inside MedCare
+          </p>
+          <SectionHeading className="mt-3">
+            Explore Our <span>Medical Facilities</span>
+          </SectionHeading>
+        </Reveal>
       </Container>
 
       <ImageAnimation items={homeAnimationItems} />

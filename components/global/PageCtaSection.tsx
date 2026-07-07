@@ -6,14 +6,14 @@ import {
   brandButtonClassName,
   brandButtonOutlineClassName,
   company,
-  contactPageHref,
+  appointmentPageHref,
 } from "@/constants";
 import { images } from "@/lib/images";
 
 export function PageCtaSection() {
   return (
     <section
-      className="relative overflow-hidden px-2 py-20 md:px-6 md:py-28 lg:px-10"
+      className="relative overflow-hidden px-2 py-10 md:px-6 md:py-16 lg:px-10"
       style={{ backgroundImage: `url('${images.ctaBg}')` }}
     >
       <div className="absolute inset-0 bg-brand-navy/85" aria-hidden />
@@ -24,13 +24,13 @@ export function PageCtaSection() {
             <span className="font-semibold text-brand-green-light">Your Health?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:text-lg">
-            Book an appointment at our G-8 Islamabad clinic today — or message us on
+            Book an appointment at our G-8 Islamabad clinic today  or message us on
             WhatsApp for emergency support available around the clock.
           </p>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href={contactPageHref} className={brandButtonClassName}>
+            <Link href={appointmentPageHref} className={brandButtonClassName}>
               Contact & Book
               <FaCircleArrowRight />
             </Link>

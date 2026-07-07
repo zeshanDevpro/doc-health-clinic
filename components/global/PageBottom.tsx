@@ -1,5 +1,5 @@
 import { PageCtaSection } from "@/components/global/PageCtaSection";
-import { FaqSection } from "@/view/home/FaqSection";
+import { FaqSection } from "@/view/contact/FaqSection";
 
 type PageBottomProps = {
   showCta?: boolean;

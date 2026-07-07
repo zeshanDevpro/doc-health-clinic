@@ -117,7 +117,7 @@ export function useImageAnimation(
         y: metrics.offsetTop,
         width: metrics.cardWidth,
         height: metrics.cardHeight,
-        borderRadius: 10,
+        borderRadius: 20,
         scale: 1,
         opacity: visible ? 1 : 0,
         zIndex: 30,

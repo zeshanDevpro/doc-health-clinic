@@ -40,11 +40,11 @@ export function getImageAnimationLayout(
   const isMedium = width >= 768;
 
   if (isLarge) {
-    const cardWidth = 200;
-    const cardHeight = 300;
-    const gap = 36;
-    const offsetTop = height - 390;
-    const offsetLeft = thumbnailStripLeft(width, cardWidth, gap, 48);
+    const cardWidth = 210;
+    const cardHeight = 310;
+    const gap = 28;
+    const offsetTop = Math.round((height - cardHeight) / 2);
+    const offsetLeft = thumbnailStripLeft(width, cardWidth, gap, 56);
 
     return {
       width,
@@ -55,9 +55,9 @@ export function getImageAnimationLayout(
       offsetTop,
       offsetLeft,
       thumbnailOffset: 0,
-      detailsTop: 220,
-      detailsLeft: 60,
-      detailsWidth: Math.min(480, width - offsetLeft - 80),
+      detailsTop: Math.round(height * 0.28),
+      detailsLeft: 56,
+      detailsWidth: Math.min(500, width - offsetLeft - 100),
     };
   }
 

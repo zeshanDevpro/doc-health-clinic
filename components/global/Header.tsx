@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { brandButtonClassNameSm, company, contactPageHref, navLinks } from "@/constants";
+import { brandButtonClassNameSm, company, appointmentPageHref, navLinks } from "@/constants";
 import logo from "@/public/images/medcare-logo.svg";
 
 type MobileNavItemProps = {
@@ -118,14 +118,14 @@ export default function Header() {
         <div className="relative z-20 flex shrink-0 items-center gap-3">
           <div className="hidden lg:block">
             <Link
-              href={contactPageHref}
+              href={appointmentPageHref}
               className={`${brandButtonClassNameSm} ${
-                pathname.startsWith(contactPageHref)
+                pathname.startsWith(appointmentPageHref)
                   ? "border-brand-green bg-brand-green text-white"
                   : ""
               }`}
             >
-              Contact & Book
+              Book Appointment
             </Link>
           </div>
 
@@ -214,11 +214,11 @@ export default function Header() {
                   className="mt-4 px-1"
                 >
                   <Link
-                    href={contactPageHref}
+                    href={appointmentPageHref}
                     onClick={closeMenu}
                     className={`inline-flex w-full justify-center ${brandButtonClassNameSm} py-4`}
                   >
-                    Contact & Book
+                    Book Appointment
                   </Link>
                 </motion.div>
               </nav>

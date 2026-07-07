@@ -39,12 +39,12 @@ export const images = {
   healthyEating: unsplash("1558618666-fcd25c85cd64", 800),
   dentalHygiene: unsplash("1576091160550-2173dba999ef", 800),
 
-  doctor1: unsplash("1612349317150-e413f6a5b16d", 600),
-  doctor2: unsplash("1594824476967-48c8b964273f", 600),
-  doctor3: unsplash("1573496359142-b8d87734a5a2", 600),
-  doctor4: unsplash("1573496359142-b8d87734a5a2", 600),
-  doctor5: unsplash("1594824476967-48c8b964273f", 600),
-  doctor6: unsplash("1612349317150-e413f6a5b16d", 600),
+  doctor1: unsplash("1573496359142-b8d87734a5a2", 600),
+  doctor2: unsplash("1612349317150-e413f6a5b16d", 600),
+  doctor3: unsplash("1594824476967-48c8b964273f", 600),
+  doctor4: unsplash("1472099645785-5658abf4ff4e", 600),
+  doctor5: unsplash("1494790108377-be9c29b29330", 600),
+  doctor6: unsplash("1507003211169-0a1dd7228f2d", 600),
 
   patient1: unsplash("1438761681033-6461ffad8d80", 200),
   patient2: unsplash("1507003211169-0a1dd7228f2d", 200),

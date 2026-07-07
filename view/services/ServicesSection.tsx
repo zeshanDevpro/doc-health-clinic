@@ -19,7 +19,7 @@ import {
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { contactPageHref, medicalServices } from "@/constants";
+import { appointmentPageHref, medicalServices } from "@/constants";
 import type { IconType } from "react-icons";
 
 const iconMap: Record<string, IconType> = {
@@ -51,7 +51,7 @@ export function ServicesSection({
   const items = limit ? medicalServices.slice(0, limit) : medicalServices;
 
   return (
-    <section className="w-full bg-white px-2 py-20 md:px-6 md:py-28 lg:px-10">
+    <section className="w-full px-2 py-10 md:px-6 md:py-16 lg:px-10">
       <Container>
         {showHeading && (
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -59,7 +59,7 @@ export function ServicesSection({
               Our Medical <span>Services</span>
             </SectionHeading>
             <p className="mt-4 text-brand-grey">
-              Comprehensive healthcare under one roof — from preventive care to
+              Comprehensive healthcare under one roof  from preventive care to
               specialised treatments for patients across Islamabad and the capital region.
             </p>
           </Reveal>
@@ -85,7 +85,7 @@ export function ServicesSection({
                     {service.description}
                   </p>
                   <Link
-                    href={contactPageHref}
+                    href={appointmentPageHref}
                     className="mt-4 text-sm font-semibold text-brand-green transition hover:text-brand-navy"
                   >
                     Book Appointment →

@@ -9,6 +9,7 @@ const routes = [
   "/why-choose-us",
   "/health-tips",
   "/contact",
+  "/appointment",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

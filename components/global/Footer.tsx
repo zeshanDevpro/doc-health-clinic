@@ -59,7 +59,7 @@ export function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
-            {company.tagline} — Islamabad&apos;s trusted medical centre for
+            {company.tagline}  Islamabad&apos;s trusted medical centre for
             Pakistani families.
           </p>
           <div className="mt-5 flex gap-3">

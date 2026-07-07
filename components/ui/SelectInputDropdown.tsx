@@ -30,54 +30,15 @@ export function SelectInputDropdown({
   "aria-label": ariaLabel,
 }: SelectInputDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
-  const selectedOption = options.find((option) => option.value === selectedValue);
-
-  const normalize = (s: string) =>
-    s
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/\p{Diacritic}/gu, "")
-      .trim();
-
-  const filteredOptions = (() => {
-    const term = normalize(searchTerm);
-    if (!term) {
-      return options.filter((option) => option.label && option.value);
-    }
-
-    const scored: Array<{ option: SelectOption; score: number }> = [];
-
-    for (const option of options) {
-      if (!option.label || !option.value) continue;
-
-      const label = normalize(option.label);
-      const value = normalize(option.value);
-
-      let score = Number.POSITIVE_INFINITY;
-      if (label.startsWith(term) || value.startsWith(term)) {
-        score = 0;
-      } else if (label.includes(term) || value.includes(term)) {
-        score = 1;
-      }
-
-      if (score !== Number.POSITIVE_INFINITY) {
-        scored.push({ option, score });
-      }
-    }
-
-    scored.sort((a, b) => {
-      if (a.score !== b.score) return a.score - b.score;
-      return a.option.label.localeCompare(b.option.label);
-    });
-
-    return scored.map((s) => s.option);
-  })();
+  const visibleOptions = options.filter((option) => option.label && option.value);
+  const selectedOption = visibleOptions.find(
+    (option) => option.value === selectedValue,
+  );
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -86,7 +47,6 @@ export function SelectInputDropdown({
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
-        setSearchTerm("");
         setHighlightedIndex(0);
       }
     };
@@ -102,7 +62,6 @@ export function SelectInputDropdown({
 
   useEffect(() => {
     if (!isOpen) {
-      setSearchTerm("");
       setHighlightedIndex(0);
     } else {
       const focusTimeout = window.setTimeout(() => {
@@ -112,10 +71,6 @@ export function SelectInputDropdown({
       return () => window.clearTimeout(focusTimeout);
     }
   }, [isOpen]);
-
-  useEffect(() => {
-    setHighlightedIndex(0);
-  }, [searchTerm]);
 
   useEffect(() => {
     if (listRef.current && highlightedIndex >= 0) {
@@ -132,47 +87,35 @@ export function SelectInputDropdown({
   const handleSelect = (value: string) => {
     onValueChange(value);
     setIsOpen(false);
-    setSearchTerm("");
     setHighlightedIndex(0);
   };
 
-  const handleSearchTyping = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isOpen) return;
 
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
         setHighlightedIndex((prev) =>
-          prev < filteredOptions.length - 1 ? prev + 1 : 0,
+          prev < visibleOptions.length - 1 ? prev + 1 : 0,
         );
         return;
       case "ArrowUp":
         e.preventDefault();
         setHighlightedIndex((prev) =>
-          prev > 0 ? prev - 1 : filteredOptions.length - 1,
+          prev > 0 ? prev - 1 : visibleOptions.length - 1,
         );
         return;
       case "Enter":
         e.preventDefault();
-        if (filteredOptions[highlightedIndex]) {
-          handleSelect(filteredOptions[highlightedIndex].value);
+        if (visibleOptions[highlightedIndex]) {
+          handleSelect(visibleOptions[highlightedIndex].value);
         }
         return;
       case "Escape":
         e.preventDefault();
         setIsOpen(false);
-        setSearchTerm("");
         setHighlightedIndex(0);
-        return;
-      case "Backspace":
-        e.preventDefault();
-        setSearchTerm((prev) => prev.slice(0, -1));
-        return;
-    }
-
-    if (e.key.length === 1) {
-      e.preventDefault();
-      setSearchTerm((prev) => prev + e.key.toLowerCase());
     }
   };
 
@@ -191,7 +134,7 @@ export function SelectInputDropdown({
         aria-expanded={isOpen}
         disabled={disabled}
         onClick={handleToggle}
-        className={`flex h-14 w-full cursor-pointer items-center justify-between rounded-2xl border border-gray-200 bg-brand-surface px-4 py-2 text-left transition-colors ${
+        className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-2xl border border-gray-200 bg-brand-surface px-4 py-2 text-left transition-colors ${
           disabled
             ? "cursor-not-allowed opacity-50"
             : "hover:border-brand-green/40 hover:bg-white"
@@ -217,15 +160,15 @@ export function SelectInputDropdown({
           ref={dropdownContainerRef}
           role="listbox"
           className="absolute top-full left-0 right-0 z-50 mt-1 overflow-hidden rounded-2xl border border-gray-200 bg-white p-1 shadow-lg focus:outline-none"
-          onKeyDown={handleSearchTyping}
+          onKeyDown={handleKeyDown}
           tabIndex={0}
         >
           <div
             ref={listRef}
             className="scrollbar-hidden max-h-60 overflow-y-auto py-1"
           >
-            {filteredOptions.length > 0 ? (
-              filteredOptions.map((option, index) => (
+            {visibleOptions.length > 0 ? (
+              visibleOptions.map((option, index) => (
                 <button
                   key={`${option.value}-${index}`}
                   type="button"
@@ -244,7 +187,7 @@ export function SelectInputDropdown({
               ))
             ) : (
               <div className="px-4 py-8 text-center text-sm text-brand-grey">
-                No results available
+                No options available
               </div>
             )}
           </div>

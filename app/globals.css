@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-big-calendar/lib/css/react-big-calendar.css";
 
 @theme inline {
   /* MedCare Health Clinic brand palette */
@@ -203,4 +204,255 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Appointment calendar  react-big-calendar */
+.appointment-calendar-wrapper {
+  height: 500px;
+  min-height: 500px;
+}
+
+.appointment-calendar-wrapper .rbc-calendar {
+  height: 100% !important;
+  min-height: 500px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.appointment-calendar .rbc-month-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  height: 100%;
+  min-height: 420px;
+  border: none;
+  border-radius: 9px;
+  overflow: hidden;
+  background: white;
+}
+
+.appointment-calendar .rbc-month-row {
+  display: flex;
+  flex: 1 0 0;
+  min-height: 72px;
+}
+
+.appointment-calendar .rbc-row-bg {
+  display: flex;
+  flex: 1 0 0;
+}
+
+.appointment-calendar .rbc-day-bg {
+  flex: 1 1 0;
+  background-color: #dee2f5 !important;
+  cursor: pointer;
+}
+
+.appointment-calendar .rbc-day-bg.rbc-today {
+  background-color: #c3fccf !important;
+}
+
+.appointment-calendar .rbc-off-range-bg {
+  background-color: #ffc3c4 !important;
+}
+
+.appointment-calendar .rbc-header {
+  padding: 10px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.appointment-calendar .rbc-date-cell {
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-brand-grey);
+  text-align: right;
+}
+
+.appointment-calendar .rbc-date-cell > a,
+.appointment-calendar .rbc-date-cell > button {
+  color: inherit;
+}
+
+.appointment-calendar .rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #e2e8f0;
+}
+
+.appointment-calendar .rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid #e2e8f0;
+}
+
+.appointment-calendar .rbc-row-content {
+  z-index: 2;
+}
+
+/* ImageAnimation — GSAP facility showcase carousel */
+.image-animation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 18;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    rgba(15, 118, 110, 0.82) 0%,
+    rgba(15, 118, 110, 0.45) 38%,
+    rgba(15, 118, 110, 0.12) 62%,
+    transparent 78%
+  );
+}
+
+.image-animation__indicator {
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: 60;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-brand-green);
+}
+
+.image-animation__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 8px 12px 28px rgba(0, 0, 0, 0.35);
+  will-change: transform, width, height, opacity, border-radius;
+  transform: translateZ(0);
+}
+
+.image-animation__details {
+  position: absolute;
+  z-index: 22;
+  top: var(--image-animation-details-top, 240px);
+  left: var(--image-animation-details-left, 60px);
+  width: var(--image-animation-details-width, 500px);
+  max-width: calc(100% - 40px);
+  pointer-events: none;
+}
+
+.image-animation__place-box {
+  position: relative;
+  height: 38px;
+  overflow: hidden;
+}
+
+.image-animation__place-box .image-animation__place {
+  position: relative;
+  padding-top: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.image-animation__place-box .image-animation__place::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  border-radius: 999px;
+  background-color: var(--color-brand-green-light);
+}
+
+.image-animation__title-box {
+  margin-top: 2px;
+  height: 72px;
+  overflow: hidden;
+}
+
+.image-animation__title-1,
+.image-animation__title-2 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.image-animation__desc {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.image-animation__cover {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .image-animation::before {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 118, 110, 0.78) 0%,
+      rgba(15, 118, 110, 0.42) 45%,
+      rgba(15, 118, 110, 0.2) 100%
+    );
+  }
+
+  .image-animation__place-box {
+    height: 34px;
+  }
+
+  .image-animation__place-box .image-animation__place {
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+  .image-animation__title-box {
+    height: 50px;
+  }
+
+  .image-animation__title-1,
+  .image-animation__title-2 {
+    font-size: 36px;
+  }
+
+  .image-animation__desc {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 639px) {
+  .image-animation__place-box {
+    height: 28px;
+  }
+
+  .image-animation__place-box .image-animation__place {
+    padding-top: 8px;
+    font-size: 12px;
+  }
+
+  .image-animation__place-box .image-animation__place::before {
+    width: 22px;
+    height: 3px;
+  }
+
+  .image-animation__title-box {
+    height: 34px;
+  }
+
+  .image-animation__title-1,
+  .image-animation__title-2 {
+    font-size: 26px;
+  }
+
+  .image-animation__desc {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
 }

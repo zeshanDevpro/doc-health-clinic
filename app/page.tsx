@@ -1,12 +1,12 @@
 import { PageBottom } from "@/components/global/PageBottom";
 import { HeroSection } from "@/view/home/HeroSection";
-import { AboutSection } from "@/view/home/AboutSection";
+import { AboutSection } from "@/view/about/AboutSection";
 import { HomeGallerySection } from "@/view/home/HomeGallerySection";
-import { ServicesSection } from "@/view/home/ServicesSection";
-import { WhyChooseUsSection } from "@/view/home/WhyChooseUsSection";
-import { DoctorsSection } from "@/view/home/DoctorsSection";
+import { ServicesSection } from "@/view/services/ServicesSection";
+import { WhyChooseUsSection } from "@/view/why-choose-us/WhyChooseUsSection";
+import { DoctorsSection } from "@/view/doctors/DoctorsSection";
 import { TestimonialsSection } from "@/view/home/TestimonialsSection";
-import { HealthTipsSection } from "@/view/home/HealthTipsSection";
+import { HealthTipsSection } from "@/view/health-tips/HealthTipsSection";
 
 export default function Home() {
   return (

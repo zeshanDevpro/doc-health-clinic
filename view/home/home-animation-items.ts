@@ -1,102 +1,82 @@
 import { images } from "@/lib/images";
 import type { ImageAnimationItem } from "@/types";
 
+/**
+ * Each slide uses a distinct image — titles and descriptions match what is shown.
+ * Image reference:
+ * - aboutClinic: modern medical facility interior
+ * - doctorConsultation: specialist physician with stethoscope
+ * - checkup: clinical examination / general practice
+ * - medicalTeam: group of healthcare professionals
+ * - hospitalReception: hospital bed & inpatient care setting
+ * - pediatrics: compassionate family / child healthcare
+ * - heartHealth: cardiovascular / heart health focus
+ * - laboratory: preventive health & wellness screening
+ */
 const clinicShowcaseItems: ImageAnimationItem[] = [
   {
-    image: images.doctorConsultation,
-    place: "G-8, Islamabad",
-    title: "DOCTOR",
-    title2: "CONSULT",
+    image: images.aboutClinic,
+    place: "G-8 Markaz, Islamabad",
+    title: "OUR",
+    title2: "CLINIC",
     description:
-      "One-on-one consultations with FCPS-qualified physicians who listen carefully and explain every step of your care plan in plain language.",
+      "A modern, fully equipped medical centre in the heart of G-8 — designed for comfort, hygiene, and world-class outpatient care.",
+  },
+  {
+    image: images.doctorConsultation,
+    place: "Consultation Rooms",
+    title: "SPECIALIST",
+    title2: "DOCTOR",
+    description:
+      "FCPS-qualified physicians ready to listen, diagnose, and build a personalised treatment plan tailored to your needs.",
+  },
+  {
+    image: images.checkup,
+    place: "General Medicine",
+    title: "HEALTH",
+    title2: "CHECKUP",
+    description:
+      "Thorough physical examinations and routine screenings to catch health issues early and keep your family well year-round.",
+  },
+  {
+    image: images.medicalTeam,
+    place: "MedCare Team",
+    title: "EXPERT",
+    title2: "TEAM",
+    description:
+      "A dedicated team of doctors, nurses, and support staff working together across every department under one roof.",
   },
   {
     image: images.hospitalReception,
-    place: "MedCare Clinic",
-    title: "WELCOME",
-    title2: "DESK",
-    description:
-      "A calm, modern reception area where our team greets you warmly and ensures a smooth check-in — in English and Urdu.",
-  },
-  {
-    image: images.medicalEquipment,
-    place: "Diagnostic Wing",
-    title: "MODERN",
-    title2: "EQUIP",
-    description:
-      "State-of-the-art diagnostic and treatment technology for faster, more accurate results — all under one roof in Islamabad.",
-  },
-  {
-    image: images.mri,
-    place: "Imaging Centre",
-    title: "ADVANCED",
-    title2: "MRI",
-    description:
-      "On-site MRI and imaging services with same-day reporting so your specialist can act on results without delay.",
-  },
-  {
-    image: images.laboratory,
-    place: "Diagnostic Lab",
-    title: "FAST",
-    title2: "LABS",
-    description:
-      "Comprehensive blood work, pathology, and screening panels with results delivered directly to your doctor within hours.",
-  },
-  {
-    image: images.nurses,
-    place: "Patient Care",
-    title: "NURSING",
+    place: "Inpatient Wing",
+    title: "INPATIENT",
     title2: "CARE",
     description:
-      "Compassionate nursing staff providing attentive support before, during, and after every procedure and visit.",
+      "Clean, well-equipped patient rooms and beds with round-the-clock nursing support for recovery and observation.",
   },
   {
     image: images.pediatrics,
     place: "Paediatrics Dept.",
-    title: "CHILD",
-    title2: "HEALTH",
+    title: "CHILD &",
+    title2: "FAMILY",
     description:
-      "Gentle paediatric care for infants and children — vaccinations, growth monitoring, and child-friendly consultations.",
+      "Warm, child-friendly care including vaccinations, growth checks, and gentle consultations for every age group.",
   },
   {
-    image: images.dentist,
-    place: "Dental Suite",
-    title: "DENTAL",
-    title2: "CARE",
-    description:
-      "Complete dental services from routine cleanings to cosmetic procedures — keeping your family's smiles healthy.",
-  },
-  {
-    image: images.waitingRoom,
-    place: "Outpatient Dept.",
-    title: "COMFORT",
-    title2: "WAIT",
-    description:
-      "Spacious, hygienic waiting areas designed for your comfort while you wait for your appointment or test results.",
-  },
-  {
-    image: images.medicalTeam,
-    place: "Specialist Team",
-    title: "EXPERT",
-    title2: "TEAM",
-    description:
-      "Board-certified specialists across 15+ departments — cardiology, orthopaedics, neurology, dermatology, and more.",
-  },
-  {
-    image: images.aboutClinic,
-    place: "Emergency Unit",
-    title: "24/7",
-    title2: "EMERG",
-    description:
-      "Round-the-clock emergency support with rapid triage and on-call specialists at our G-8 clinic.",
-  },
-  {
-    image: images.heroDoctors,
-    place: "Cardiology",
+    image: images.heartHealth,
+    place: "Cardiology Unit",
     title: "HEART",
     title2: "CARE",
     description:
-      "Advanced cardiovascular diagnostics, ECG monitoring, and personalised treatment plans for long-term heart health.",
+      "Cardiovascular assessments, ECG monitoring, and expert guidance to protect your heart and manage hypertension.",
+  },
+  {
+    image: images.laboratory,
+    place: "Preventive Health",
+    title: "WELLNESS",
+    title2: "SCREEN",
+    description:
+      "Preventive screenings and lifestyle counselling to help you stay ahead of diabetes, nutrition, and chronic conditions.",
   },
 ];
 

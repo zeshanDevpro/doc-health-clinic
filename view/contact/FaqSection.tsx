@@ -24,7 +24,7 @@ export function FaqSection({
   showHeading = true,
 }: FaqSectionProps) {
   return (
-    <section className="w-full px-2 py-20 md:px-6 md:py-28 lg:px-10">
+    <section className="w-full px-2 py-10 md:px-6 md:py-16 lg:px-10">
       <Container className="mx-auto max-w-4xl">
         <Reveal>
           <FaqAccordion

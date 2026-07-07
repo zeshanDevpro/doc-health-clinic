@@ -73,7 +73,7 @@ export function HealthTipsSection({
   const items = limit ? healthTips.slice(0, limit) : healthTips;
 
   return (
-    <section className="w-full px-2 py-20 md:px-6 md:py-28 lg:px-10">
+    <section className="w-full px-2 py-10 md:px-6 md:py-16 lg:px-10">
       <Container>
         {showHeading && (
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -81,7 +81,7 @@ export function HealthTipsSection({
               Health <span>Tips</span>
             </SectionHeading>
             <p className="mt-4 text-brand-grey">
-              Practical health guidance for Pakistani families — from our
+              Practical health guidance for Pakistani families  from our
               medical team, no appointment needed.
             </p>
           </Reveal>

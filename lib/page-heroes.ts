@@ -5,7 +5,7 @@ export const pageHeroContent = {
     headingLine1: "About MedCare",
     headingLine2: "Health Clinic",
     description:
-      "A trusted medical centre in G-8, Islamabad delivering compassionate, affordable healthcare for Pakistani families — backed by experienced specialists and modern facilities.",
+      "A trusted medical centre in G-8, Islamabad delivering compassionate, affordable healthcare for Pakistani families  backed by experienced specialists and modern facilities.",
     backgroundImage: images.heroAbout,
     badge: "Your Health, Our Priority",
   },
@@ -13,7 +13,7 @@ export const pageHeroContent = {
     headingLine1: "Medical Services",
     headingLine2: "We Provide",
     description:
-      "From general practice to specialised departments — comprehensive care under one roof, designed for the needs of patients across Pakistan.",
+      "From general practice to specialised departments  comprehensive care under one roof, designed for the needs of patients across Pakistan.",
     backgroundImage: images.heroServices,
     badge: "12 Departments",
   },
@@ -21,7 +21,7 @@ export const pageHeroContent = {
     headingLine1: "Meet Our",
     headingLine2: "Specialist Doctors",
     description:
-      "FCPS and MRCP-qualified physicians with training from Pakistan's leading medical institutions — dedicated to your health and recovery.",
+      "FCPS and MRCP-qualified physicians with training from Pakistan's leading medical institutions  dedicated to your health and recovery.",
     backgroundImage: images.heroDoctors,
     badge: "Expert Team",
   },
@@ -37,7 +37,7 @@ export const pageHeroContent = {
     headingLine1: "Health Tips &",
     headingLine2: "Wellness Advice",
     description:
-      "Practical health guidance from our medical team — written for Pakistani families, climates, and lifestyles.",
+      "Practical health guidance from our medical team  written for Pakistani families, climates, and lifestyles.",
     backgroundImage: images.heroHealthTips,
     badge: "Expert Advice",
   },
@@ -45,8 +45,16 @@ export const pageHeroContent = {
     headingLine1: "Contact &",
     headingLine2: "Book Appointment",
     description:
-      "Visit us in G-8 Markaz, Islamabad — WhatsApp, email, or book your appointment online. Our team responds promptly in English and Urdu.",
+      "Visit us in G-8 Markaz, Islamabad  WhatsApp, email, or book your appointment online. Our team responds promptly in English and Urdu.",
     backgroundImage: images.heroContact,
     badge: "We're Here to Help",
+  },
+  appointment: {
+    headingLine1: "Book Your",
+    headingLine2: "Appointment",
+    description:
+      "Choose a date and time that works for you. Our G-8 Islamabad clinic will confirm your visit via WhatsApp or SMS within one hour.",
+    backgroundImage: images.heroContact,
+    badge: "Easy Online Booking",
   },
 } as const;

@@ -67,7 +67,7 @@ export function AppointmentSection({ showHeading = true }: AppointmentSectionPro
             </SectionHeading>
             <p className="mt-4 text-white/75">
               Schedule a visit in minutes. Our Islamabad team will confirm via WhatsApp
-              or SMS — usually within one hour.
+              or SMS  usually within one hour.
             </p>
           </Reveal>
         )}
@@ -168,7 +168,7 @@ export function AppointmentSection({ showHeading = true }: AppointmentSectionPro
                       <option value="">Any available doctor</option>
                       {doctors.map((doc) => (
                         <option key={doc.id} value={doc.name}>
-                          {doc.name} — {doc.specialization}
+                          {doc.name}  {doc.specialization}
                         </option>
                       ))}
                     </select>

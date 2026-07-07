@@ -24,7 +24,7 @@ type ContactSectionProps = {
 
 export function ContactSection({ showHeading = true }: ContactSectionProps) {
   return (
-    <section className="w-full bg-white px-2 py-20 md:px-6 md:py-28 lg:px-10">
+    <section className="w-full px-2 py-10 md:px-6 md:py-16 lg:px-10">
       <Container>
         {showHeading && (
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -32,7 +32,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
               Contact <span>Us</span>
             </SectionHeading>
             <p className="mt-4 text-brand-grey">
-              Visit us in G-8 Markaz, Islamabad — WhatsApp, email, or message us.
+              Visit us in G-8 Markaz, Islamabad  WhatsApp, email, or message us.
               Our team responds promptly in English and Urdu.
             </p>
           </Reveal>
@@ -72,7 +72,7 @@ export function ContactSection({ showHeading = true }: ContactSectionProps) {
                 </div>
               </div>
 
-              <div className="flex gap-4 rounded-2xl border-2 border-red-100 bg-red-50 p-5">
+              <div className="flex gap-4 rounded-2xl border-2 border-red-100 bg-red-50 p-2 md:p-5">
                 <MdAccessTime className="mt-0.5 h-6 w-6 shrink-0 text-red-500" aria-hidden />
                 <div>
                   <p className="font-semibold text-red-700">Emergency</p>

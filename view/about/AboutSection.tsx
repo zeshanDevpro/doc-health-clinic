@@ -19,7 +19,7 @@ export function AboutSection({
   const isPreview = variant === "preview";
 
   return (
-    <section className="w-full px-2 py-20 md:px-6 md:py-28 lg:px-10">
+    <section className="w-full px-2 py-10 md:px-6 md:py-16 lg:px-10">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
@@ -27,7 +27,7 @@ export function AboutSection({
               <div className="overflow-hidden rounded-3xl shadow-xl">
                 <Image
                   src={images.aboutClinic}
-                  alt="MedCare Health Clinic — modern medical facility in Islamabad"
+                  alt="MedCare Health Clinic  modern medical facility in Islamabad"
                   width={600}
                   height={500}
                   className="h-[320px] w-full object-cover md:h-[420px]"

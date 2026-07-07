@@ -27,7 +27,9 @@ export const BRAND_COLORS = {
 
 export const HERO_TEXT_GRADIENT = `linear-gradient(122deg, ${BRAND_COLORS.accent} 0%, ${BRAND_COLORS.primary} 48%, ${BRAND_COLORS.secondary} 100%)`;
 
-export const HERO_TEXT_GRADIENT_ON_DARK = `linear-gradient(122deg, #FFFFFF 0%, #CCFBF1 45%, ${BRAND_COLORS.secondary} 100%)`;
+/** Bright stops only — readable on dark hero / page backgrounds */
+export const HERO_TEXT_GRADIENT_ON_DARK =
+  "linear-gradient(120deg, #F0FDFA 0%, #5EEAD4 38%, #2DD4BF 72%, #99F6E4 100%)";
 
 export const brandButtonClassName =
   "group inline-flex items-center justify-center gap-3 rounded-full border-2 border-brand-green bg-brand-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-dark hover:border-brand-green-dark";
@@ -44,9 +46,9 @@ export const company = {
   tagline: "Your Health, Our Priority",
   locationShort: "G-8, Islamabad",
   description:
-    "MedCare Health Clinic is a leading private medical centre in G-8, Islamabad — offering compassionate, affordable healthcare for you and your family with FCPS-qualified doctors and modern diagnostic facilities.",
+    "MedCare Health Clinic is a leading private medical centre in G-8, Islamabad  offering compassionate, affordable healthcare for you and your family with FCPS-qualified doctors and modern diagnostic facilities.",
   email: "info@medcareclinic.pk",
-  whatsapp: "+92 300 847 3200",
+  whatsapp: "+92 300 123 4567",
   whatsappUrl: "https://wa.me/923008473200",
   address: "Plot 15, G-8 Markaz, Islamabad, ICT 44000, Pakistan",
   copyright: "MedCare Health Clinic",
@@ -58,7 +60,7 @@ export const company = {
     weekdays: "Monday – Friday: 9:00 AM – 9:00 PM",
     saturday: "Saturday: 9:00 AM – 6:00 PM",
     sunday: "Sunday: 10:00 AM – 4:00 PM (Emergency Only After Hours)",
-    emergency: "24/7 emergency desk at the clinic — dial 1122 for ambulance",
+    emergency: "24/7 emergency desk at the clinic  dial 1122 for ambulance",
   },
 } as const;
 
@@ -72,6 +74,7 @@ export const navLinks = [
 ] as const;
 
 export const contactPageHref = "/contact";
+export const appointmentPageHref = "/appointment";
 
 export const appointmentTimeSlots = [
   "09:00 AM",
@@ -93,6 +96,7 @@ export const footerNavLinks = [
   { label: "Services", href: "/services" },
   { label: "Doctors", href: "/doctors" },
   { label: "Contact & Appointment", href: "/contact" },
+  { label: "Book Appointment", href: "/appointment" },
 ] as const;
 
 export const departments = [
@@ -126,9 +130,9 @@ export const heroStats: HeroStat[] = [
 
 export const aboutContent = {
   mission:
-    "To provide accessible, compassionate, and world-class healthcare that empowers every patient to live a healthier, fuller life — treating each person with dignity, respect, and individualized attention.",
+    "To provide accessible, compassionate, and world-class healthcare that empowers every patient to live a healthier, fuller life  treating each person with dignity, respect, and individualized attention.",
   vision:
-    "To be the most trusted medical centre in Islamabad and across the capital region — recognised for clinical excellence, affordable care, and a commitment to healthier Pakistani families.",
+    "To be the most trusted medical centre in Islamabad and across the capital region  recognised for clinical excellence, affordable care, and a commitment to healthier Pakistani families.",
   experience: 18,
   highlights: [
     {
@@ -154,7 +158,7 @@ export const medicalServices: MedicalService[] = [
     id: "general-medicine",
     title: "General Medicine",
     description:
-      "Comprehensive primary care for adults — routine checkups, chronic disease management, and preventive screenings tailored to your lifestyle.",
+      "Comprehensive primary care for adults  routine checkups, chronic disease management, and preventive screenings tailored to your lifestyle.",
     icon: "stethoscope",
   },
   {
@@ -175,14 +179,14 @@ export const medicalServices: MedicalService[] = [
     id: "pediatrics",
     title: "Pediatrics",
     description:
-      "Gentle, expert care for infants, children, and adolescents — including vaccinations, growth monitoring, and developmental assessments.",
+      "Gentle, expert care for infants, children, and adolescents  including vaccinations, growth monitoring, and developmental assessments.",
     icon: "baby",
   },
   {
     id: "orthopedics",
     title: "Orthopedics",
     description:
-      "Specialized treatment for bones, joints, and muscles — from sports injuries to arthritis management and surgical rehabilitation.",
+      "Specialized treatment for bones, joints, and muscles  from sports injuries to arthritis management and surgical rehabilitation.",
     icon: "bone",
   },
   {
@@ -203,7 +207,7 @@ export const medicalServices: MedicalService[] = [
     id: "gynecology",
     title: "Gynecology",
     description:
-      "Compassionate women's health services — annual exams, prenatal care, fertility counseling, and menopause management.",
+      "Compassionate women's health services  annual exams, prenatal care, fertility counseling, and menopause management.",
     icon: "female",
   },
   {
@@ -262,7 +266,7 @@ export const whyChooseUs: WhyChooseFeature[] = [
     id: "online-appointments",
     title: "Online Appointments",
     description:
-      "Book, reschedule, or cancel appointments online in minutes — no phone queues required.",
+      "Book, reschedule, or cancel appointments online in minutes  no phone queues required.",
     icon: "calendar",
   },
   {
@@ -300,7 +304,7 @@ export const doctors: Doctor[] = [
     id: "dr-fatima",
     name: "Dr. Fatima Khan",
     specialization: "Cardiology",
-    qualification: "MBBS, FCPS (Cardiology) — Aga Khan University",
+    qualification: "MBBS, FCPS (Cardiology)  Aga Khan University",
     experience: 15,
     bio: "Dr. Fatima specialises in preventive cardiology and hypertension management, serving patients across Islamabad and the capital region with evidence-based heart care.",
     image: images.doctor1,
@@ -309,7 +313,7 @@ export const doctors: Doctor[] = [
     id: "dr-hassan",
     name: "Dr. Hassan Ahmed",
     specialization: "General Medicine",
-    qualification: "MBBS, MRCP — King Edward Medical University",
+    qualification: "MBBS, MRCP  King Edward Medical University",
     experience: 18,
     bio: "With nearly two decades in primary care, Dr. Hassan is known across G-8 for his thorough consultations and honest, patient-first approach.",
     image: images.doctor2,
@@ -318,7 +322,7 @@ export const doctors: Doctor[] = [
     id: "dr-ayesha",
     name: "Dr. Ayesha Malik",
     specialization: "Pediatrics",
-    qualification: "MBBS, FCPS (Paediatrics) — Pakistan Institute of Medical Sciences",
+    qualification: "MBBS, FCPS (Paediatrics)  Pakistan Institute of Medical Sciences",
     experience: 12,
     bio: "Dr. Ayesha creates a warm, child-friendly environment trusted by hundreds of Pakistani families for vaccinations, growth checks, and paediatric care.",
     image: images.doctor3,
@@ -327,7 +331,7 @@ export const doctors: Doctor[] = [
     id: "dr-usman",
     name: "Dr. Usman Raza",
     specialization: "Orthopedics",
-    qualification: "MBBS, FRCS — Allama Iqbal Medical College",
+    qualification: "MBBS, FRCS  Allama Iqbal Medical College",
     experience: 14,
     bio: "A specialist in sports injuries and joint replacement, Dr. Usman has helped athletes and everyday patients recover mobility and live pain-free.",
     image: images.doctor4,
@@ -336,7 +340,7 @@ export const doctors: Doctor[] = [
     id: "dr-sana",
     name: "Dr. Sana Iqbal",
     specialization: "Dermatology",
-    qualification: "MBBS, MCPS (Dermatology) — Fatima Jinnah Medical University",
+    qualification: "MBBS, MCPS (Dermatology)  Fatima Jinnah Medical University",
     experience: 10,
     bio: "Dr. Sana treats acne, eczema, and pigmentation common in Pakistani climates, combining medical and cosmetic dermatology for healthy, confident skin.",
     image: images.doctor5,
@@ -345,9 +349,9 @@ export const doctors: Doctor[] = [
     id: "dr-kamran",
     name: "Dr. Kamran Siddiqui",
     specialization: "Neurology",
-    qualification: "MBBS, FCPS (Neurology) — Aga Khan University Hospital",
+    qualification: "MBBS, FCPS (Neurology)  Aga Khan University Hospital",
     experience: 16,
-    bio: "Dr. Kamran leads our neurology department with expertise in migraines, epilepsy, and stroke recovery — backed by the latest diagnostic technology.",
+    bio: "Dr. Kamran leads our neurology department with expertise in migraines, epilepsy, and stroke recovery  backed by the latest diagnostic technology.",
     image: images.doctor6,
   },
 ];
@@ -366,7 +370,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "2",
     quote:
-      "I was anxious about my heart tests, but Dr. Fatima and her team made me feel safe throughout. The lab results came the same day — something you rarely find in Islamabad.",
+      "I was anxious about my heart tests, but Dr. Fatima and her team made me feel safe throughout. The lab results came the same day  something you rarely find in Islamabad.",
     name: "Tariq Mahmood",
     role: "Cardiology Patient",
     company: "G-8, Islamabad",
@@ -386,7 +390,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "4",
     quote:
-      "Our son was scared of doctors until we met Dr. Ayesha. She is so patient and kind with children — we travel from Faisalabad just for her paediatric appointments.",
+      "Our son was scared of doctors until we met Dr. Ayesha. She is so patient and kind with children  we travel from Faisalabad just for her paediatric appointments.",
     name: "Bilal & Saima Akhtar",
     role: "Parents",
     company: "Faisalabad",
@@ -422,7 +426,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "Simple daily habits that protect your cardiovascular system and reduce your risk of heart disease.",
     content:
-      "Your heart works tirelessly every day — give it the care it deserves. Aim for at least 150 minutes of moderate aerobic activity per week, such as brisk walking or swimming. Reduce sodium intake by cooking at home and reading food labels carefully. Manage stress through mindfulness, adequate sleep, and meaningful social connections. If you smoke, quitting is the single most impactful change you can make. Schedule an annual cardiovascular screening with your physician, especially if you have a family history of heart disease. Small, consistent changes compound into a dramatically healthier heart over time.",
+      "Your heart works tirelessly every day  give it the care it deserves. Aim for at least 150 minutes of moderate aerobic activity per week, such as brisk walking or swimming. Reduce sodium intake by cooking at home and reading food labels carefully. Manage stress through mindfulness, adequate sleep, and meaningful social connections. If you smoke, quitting is the single most impactful change you can make. Schedule an annual cardiovascular screening with your physician, especially if you have a family history of heart disease. Small, consistent changes compound into a dramatically healthier heart over time.",
     image: images.heartHealth,
   },
   {
@@ -431,7 +435,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "Why a yearly wellness visit is the smartest investment you can make in your long-term health.",
     content:
-      "Annual checkups are not just for when you feel unwell — they are your frontline defense against preventable disease. During a wellness visit, your doctor screens for high blood pressure, diabetes, cholesterol imbalances, and early signs of cancer. Many serious conditions show no symptoms in their early stages, making routine blood work and physical exams essential. Your physician can also update vaccinations, review medications, and discuss lifestyle changes tailored to your age and risk factors. Patients who maintain regular checkups live longer and catch problems when they are most treatable.",
+      "Annual checkups are not just for when you feel unwell  they are your frontline defense against preventable disease. During a wellness visit, your doctor screens for high blood pressure, diabetes, cholesterol imbalances, and early signs of cancer. Many serious conditions show no symptoms in their early stages, making routine blood work and physical exams essential. Your physician can also update vaccinations, review medications, and discuss lifestyle changes tailored to your age and risk factors. Patients who maintain regular checkups live longer and catch problems when they are most treatable.",
     image: images.checkup,
   },
   {
@@ -440,7 +444,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "Practical strategies for keeping blood sugar stable and living well with diabetes.",
     content:
-      "Living with diabetes requires a proactive partnership between you and your healthcare team. Monitor your blood glucose levels as directed and keep a log to identify patterns. Focus on a balanced diet rich in whole grains, lean proteins, and non-starchy vegetables while limiting refined sugars. Regular physical activity improves insulin sensitivity — even a 30-minute daily walk makes a measurable difference. Take medications exactly as prescribed and never skip doses without consulting your doctor. Attend quarterly HbA1c tests to track your long-term control, and schedule annual eye and foot exams to prevent complications.",
+      "Living with diabetes requires a proactive partnership between you and your healthcare team. Monitor your blood glucose levels as directed and keep a log to identify patterns. Focus on a balanced diet rich in whole grains, lean proteins, and non-starchy vegetables while limiting refined sugars. Regular physical activity improves insulin sensitivity  even a 30-minute daily walk makes a measurable difference. Take medications exactly as prescribed and never skip doses without consulting your doctor. Attend quarterly HbA1c tests to track your long-term control, and schedule annual eye and foot exams to prevent complications.",
     image: images.diabetes,
   },
   {
@@ -449,7 +453,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "A parent's guide to essential childhood vaccinations and why they matter for community health.",
     content:
-      "Vaccinations protect Pakistani children from polio, measles, hepatitis B, and other serious diseases. Follow the EPI (Expanded Programme on Immunization) schedule recommended by the Government of Pakistan — available free at government centres and at MedCare for private scheduling. Keep your child's immunisation card updated and bring it to every paediatric visit. Mild fever or soreness after injection is normal. If a dose is missed, catch-up vaccination is available — speak with our paediatrician. Vaccinating your child also protects vulnerable members of your community.",
+      "Vaccinations protect Pakistani children from polio, measles, hepatitis B, and other serious diseases. Follow the EPI (Expanded Programme on Immunization) schedule recommended by the Government of Pakistan  available free at government centres and at MedCare for private scheduling. Keep your child's immunisation card updated and bring it to every paediatric visit. Mild fever or soreness after injection is normal. If a dose is missed, catch-up vaccination is available  speak with our paediatrician. Vaccinating your child also protects vulnerable members of your community.",
     image: images.vaccination,
   },
   {
@@ -458,7 +462,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "Build a sustainable, nutritious diet that fuels your body without restrictive fad diets.",
     content:
-      "Nutrition is the foundation of good health. Fill half your plate with colorful fruits and vegetables at every meal. Choose whole grains over refined carbohydrates for sustained energy and better digestion. Include lean protein sources such as fish, poultry, legumes, and nuts. Stay hydrated by drinking water throughout the day — aim for eight glasses as a general guideline. Limit processed foods, sugary beverages, and excessive saturated fats. Plan meals ahead to avoid impulsive unhealthy choices. Remember, healthy eating is a lifestyle, not a temporary diet — consistency matters far more than perfection.",
+      "Nutrition is the foundation of good health. Fill half your plate with colorful fruits and vegetables at every meal. Choose whole grains over refined carbohydrates for sustained energy and better digestion. Include lean protein sources such as fish, poultry, legumes, and nuts. Stay hydrated by drinking water throughout the day  aim for eight glasses as a general guideline. Limit processed foods, sugary beverages, and excessive saturated fats. Plan meals ahead to avoid impulsive unhealthy choices. Remember, healthy eating is a lifestyle, not a temporary diet  consistency matters far more than perfection.",
     image: images.healthyEating,
   },
   {
@@ -467,7 +471,7 @@ export const healthTips: HealthTip[] = [
     excerpt:
       "Daily oral care practices that prevent cavities, gum disease, and costly dental procedures.",
     content:
-      "Good oral hygiene protects more than just your smile — it is linked to heart health, diabetes management, and overall well-being. Brush twice daily with fluoride toothpaste for at least two minutes, reaching all surfaces of every tooth. Floss daily to remove plaque between teeth where brushes cannot reach. Replace your toothbrush every three months or sooner if bristles are frayed. Limit acidic and sugary foods that erode enamel and feed harmful bacteria. Schedule professional cleanings and exams every six months to catch issues early. If you experience bleeding gums, persistent bad breath, or tooth sensitivity, see your dentist promptly.",
+      "Good oral hygiene protects more than just your smile  it is linked to heart health, diabetes management, and overall well-being. Brush twice daily with fluoride toothpaste for at least two minutes, reaching all surfaces of every tooth. Floss daily to remove plaque between teeth where brushes cannot reach. Replace your toothbrush every three months or sooner if bristles are frayed. Limit acidic and sugary foods that erode enamel and feed harmful bacteria. Schedule professional cleanings and exams every six months to catch issues early. If you experience bleeding gums, persistent bad breath, or tooth sensitivity, see your dentist promptly.",
     image: images.dentalHygiene,
   },
 ];

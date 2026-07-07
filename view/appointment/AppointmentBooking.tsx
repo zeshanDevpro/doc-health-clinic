@@ -40,29 +40,27 @@ export function AppointmentBooking() {
         </Reveal>
 
         <div className="mt-10">
-          <Reveal delay={100}>
-            <div className="rounded-[9px] bg-white shadow-lg ring-1 ring-gray-100">
-              <div className="flex flex-col xl:flex-row">
-                <div className="w-full xl:w-[58%]">
-                  <ScheduleAppointment
-                    booking={booking}
-                    onDateSelect={(date) =>
-                      setBooking((prev) => ({ ...prev, date, slot: null }))
-                    }
-                    onSlotSelect={(slot) =>
-                      setBooking((prev) => ({ ...prev, slot }))
-                    }
-                    onDepartmentChange={(department) =>
-                      setBooking((prev) => ({ ...prev, department }))
-                    }
-                  />
-                </div>
-                <div className="w-full border-t border-gray-100 bg-brand-surface xl:w-[42%] xl:border-t-0 xl:border-l">
-                  <AppointmentSummary booking={booking} />
-                </div>
+          <div className="rounded-[9px] bg-white shadow-lg ring-1 ring-gray-100">
+            <div className="flex flex-col xl:flex-row">
+              <div className="w-full xl:w-[58%]">
+                <ScheduleAppointment
+                  booking={booking}
+                  onDateSelect={(date) =>
+                    setBooking((prev) => ({ ...prev, date, slot: null }))
+                  }
+                  onSlotSelect={(slot) =>
+                    setBooking((prev) => ({ ...prev, slot }))
+                  }
+                  onDepartmentChange={(department) =>
+                    setBooking((prev) => ({ ...prev, department }))
+                  }
+                />
+              </div>
+              <div className="w-full border-t border-gray-100 bg-brand-surface xl:w-[42%] xl:border-t-0 xl:border-l">
+                <AppointmentSummary booking={booking} />
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         {/* Section 2: Contact Us */}

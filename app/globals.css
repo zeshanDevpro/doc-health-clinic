@@ -218,12 +218,14 @@ html {
 .appointment-calendar-wrapper {
   height: 500px;
   min-height: 500px;
+  touch-action: manipulation;
 }
 
 .appointment-calendar-wrapper .rbc-calendar {
   height: 100% !important;
   min-height: 500px;
   font-family: var(--font-poppins), sans-serif;
+  touch-action: manipulation;
 }
 
 .appointment-calendar .rbc-month-view {
@@ -236,23 +238,37 @@ html {
   border-radius: 9px;
   overflow: hidden;
   background: white;
+  width: 100%;
+  min-width: 0;
+}
+
+.appointment-calendar .rbc-month-header {
+  display: flex;
+  width: 100%;
+  min-width: 0;
 }
 
 .appointment-calendar .rbc-month-row {
   display: flex;
   flex: 1 0 0;
   min-height: 72px;
+  position: relative;
+  touch-action: manipulation;
 }
 
 .appointment-calendar .rbc-row-bg {
   display: flex;
   flex: 1 0 0;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
 .appointment-calendar .rbc-day-bg {
   flex: 1 1 0;
   background-color: #dee2f5 !important;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .appointment-calendar .rbc-day-bg.rbc-today {
@@ -264,25 +280,73 @@ html {
 }
 
 .appointment-calendar .rbc-header {
-  padding: 10px 4px;
-  font-size: 0.75rem;
+  padding: 8px 2px;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--color-brand-navy);
   background: white;
   border-bottom: 1px solid #e2e8f0;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .appointment-calendar .rbc-header {
+    padding: 10px 4px;
+    font-size: 0.75rem;
+  }
+}
+
+.appointment-calendar .rbc-row-content .rbc-row {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .appointment-calendar .rbc-date-cell {
-  padding: 6px 8px;
-  font-size: 0.8rem;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 2px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-brand-grey);
-  text-align: right;
+  text-align: center;
+  pointer-events: auto;
+  overflow: hidden;
 }
 
-.appointment-calendar .rbc-date-cell>a,
-.appointment-calendar .rbc-date-cell>button {
-  color: inherit;
+@media (min-width: 640px) {
+  .appointment-calendar .rbc-date-cell {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+}
+
+.appointment-calendar .rbc-date-cell > a,
+.appointment-calendar .rbc-date-cell > button,
+.appointment-calendar .rbc-date-cell > span {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .appointment-calendar .rbc-date-cell > a,
+  .appointment-calendar .rbc-date-cell > button,
+  .appointment-calendar .rbc-date-cell > span {
+    min-height: 44px;
+    justify-content: flex-end;
+  }
 }
 
 .appointment-calendar .rbc-month-row+.rbc-month-row {
@@ -295,6 +359,13 @@ html {
 
 .appointment-calendar .rbc-row-content {
   z-index: 2;
+  pointer-events: none;
+}
+
+.appointment-calendar .rbc-row-content .rbc-date-cell,
+.appointment-calendar .rbc-row-content .rbc-event,
+.appointment-calendar .rbc-row-content .rbc-show-more {
+  pointer-events: auto;
 }
 
 /* ImageAnimation  GSAP facility showcase carousel */

@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Calendar, momentLocalizer, type SlotInfo } from "react-big-calendar";
+import { useCallback, useMemo, useState } from "react";
+import { Calendar, momentLocalizer, type DateHeaderProps, type SlotInfo } from "react-big-calendar";
 import moment from "moment";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { SlotDetails } from "./SlotDetails";
@@ -32,6 +32,20 @@ export function ScheduleAppointment({
     return start;
   }, []);
 
+  const selectDate = useCallback(
+    (date: Date) => {
+      const selected = new Date(date);
+      selected.setHours(0, 0, 0, 0);
+
+      if (selected < today) return;
+
+      onDateSelect(selected);
+      setShowSlots(true);
+      setShowForm(false);
+    },
+    [onDateSelect, today],
+  );
+
   function shiftMonth(offset: number) {
     setCurrentDate((prev) => {
       const next = new Date(prev);
@@ -41,15 +55,40 @@ export function ScheduleAppointment({
   }
 
   function handleDateSelect(slotInfo: SlotInfo) {
-    const selected = new Date(slotInfo.start);
-    selected.setHours(0, 0, 0, 0);
-
-    if (selected < today) return;
-
-    onDateSelect(selected);
-    setShowSlots(true);
-    setShowForm(false);
+    selectDate(slotInfo.start);
   }
+
+  const calendarFormats = useMemo(
+    () => ({
+      weekdayFormat: (date: Date, culture?: string, localizer?: { format: (d: Date, f: string, c?: string) => string }) =>
+        localizer?.format(date, "dd", culture) ?? date.toLocaleDateString("en-US", { weekday: "short" }).slice(0, 2),
+    }),
+    [],
+  );
+
+  const calendarComponents = useMemo(
+    () => ({
+      month: {
+        dateHeader: ({ label, date, isOffRange }: DateHeaderProps) => {
+          const day = new Date(date);
+          day.setHours(0, 0, 0, 0);
+          const disabled = isOffRange || day < today;
+
+          return (
+            <button
+              type="button"
+              disabled={disabled}
+              className="rbc-button-link w-full min-w-0 text-inherit disabled:cursor-not-allowed disabled:opacity-40"
+              onClick={() => selectDate(date)}
+            >
+              {label}
+            </button>
+          );
+        },
+      },
+    }),
+    [selectDate, today],
+  );
 
   function handleBackToCalendar() {
     setShowSlots(false);
@@ -122,7 +161,10 @@ export function ScheduleAppointment({
           onNavigate={setCurrentDate}
           onSelectSlot={handleDateSelect}
           selectable
+          longPressThreshold={10}
           toolbar={false}
+          components={calendarComponents}
+          formats={calendarFormats}
           style={{ height: "100%" }}
           dayPropGetter={(date) => {
             const day = new Date(date);
